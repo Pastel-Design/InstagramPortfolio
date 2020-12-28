@@ -26,6 +26,6 @@ class AlbumController extends Controller
      */
     function process(array $params, array $gets = null)
     {
-        $this->albumManager->getAlbums();
+
     }
 }
