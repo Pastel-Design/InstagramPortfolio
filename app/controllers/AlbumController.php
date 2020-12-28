@@ -3,6 +3,7 @@
 
 namespace app\controllers;
 
+use app\models\AlbumManager;
 /**
  * Class AlbumController
  *
@@ -10,9 +11,10 @@ namespace app\controllers;
  */
 class AlbumController extends Controller
 {
-
+    public AlbumManager $albumManager;
     public function __construct()
     {
+        $this->albumManager = new AlbumManager;
         parent::__construct();
     }
 
@@ -24,6 +26,6 @@ class AlbumController extends Controller
      */
     function process(array $params, array $gets = null)
     {
-        // TODO: Implement process() method.
+        $this->albumManager->getAlbums();
     }
 }
