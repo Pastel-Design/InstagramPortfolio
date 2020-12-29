@@ -5,12 +5,16 @@
     <base href="/DatabaseLayer"/>
     <meta charset="UTF-8"/>
     <title>
-        Template
+        {$page_title}
     </title>
-    <meta name="page_description" content=""/>
-    <meta name="keywords" content=""/>
+    <meta name="page_description" content="{$page_description}"/>
+    <meta name="keywords" content="{$page_keywords}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../www/styles/style.css?v={time()}" type="text/css"/>
+    <script src="../node_modules/axios/dist/axios.js?v={time()}" async></script>
+    <script src="../../www/scripts/script.js" async></script>
+    <script src="../../www/scripts/ajax.js" async></script>
+
     <!--- fontawesome -->
     <script src="https://kit.fontawesome.com/748c10f0ee.js" crossorigin="anonymous"></script>
     <!-- fontawesome -->

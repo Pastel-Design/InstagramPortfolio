@@ -1,7 +1,8 @@
 <?php
 
 use app\router\Router;
-
+use app\models\DbManager;
+use app\config\DbConfig;
 mb_internal_encoding("UTF-8");
 
 require("../vendor/autoload.php");
@@ -11,14 +12,20 @@ require("../vendor/autoload.php");
  */
 function autoloadFunction($class)
 {
-    $classname="../" . preg_replace("/[\\ ]+/", "/", $class) . ".php";
+    $classname = "../" . preg_replace("/[\\ ]+/", "/", $class) . ".php";
     if (is_readable($classname)) {
         require($classname);
     }
 }
+
 spl_autoload_register("autoloadFunction");
 
 session_start();
-
+try {
+//připojení k db
+    DbManager::connect(DbConfig::$host, DbConfig::$username, DbConfig::$pass, DbConfig::$database);
+} catch (PDOException $exception) {
+    Router::reroute("error/500");
+}
 $router = new Router();
 $router->process(array($_SERVER['REQUEST_URI']));

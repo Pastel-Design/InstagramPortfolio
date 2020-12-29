@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\controllers\Controller as Controller;
+
 /**
  * Controller ErrorController
  *
@@ -31,9 +33,9 @@ class ErrorController extends Controller
         } else {
             $errCode = "404";
         }
-        $this->head['page_title'] = 'Chyba ' . $errCode;
+        $this->head['page_title'] = 'Error ' . $errCode;
         $this->head['page_keywords'] = "error";
-        $this->head['page_description'] = "Došlo k chybě " . $errCode;
+        $this->head['page_description'] = "Error occurred " . $errCode;
         $this->view = $errCode;
     }
 }
