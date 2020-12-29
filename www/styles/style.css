@@ -1,3 +1,118 @@
+@charset "UTF-8";
+* {
+  font-family: Helvetica, sans-serif;
+  color: #625e5e;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.darkMode *, .darkMode {
+  color: #ffffff;
+  background-color: #3f4047;
+}
+
+header {
+  width: 60%;
+}
+
+.img {
+  background-image: url("../images/img.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.profile {
+  display: flex;
+  padding: 10px;
+}
+.profile > div:first-of-type {
+  flex: 1;
+}
+.profile > div:last-of-type {
+  flex: 2;
+}
+.profile > div:last-of-type > div:nth-of-type(1) {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  padding: 25px 0px 0px 0px;
+}
+.profile > div:last-of-type > div:nth-of-type(1) > * {
+  margin: 10px;
+}
+.profile > div:last-of-type > div:nth-of-type(1) h1 {
+  color: #989693;
+  font-weight: lighter;
+  margin-left: 0;
+  font-size: 25px;
+}
+.profile > div:last-of-type > div:nth-of-type(2) {
+  display: flex;
+  padding: 15px 0px 25px 0px;
+}
+.profile > div:last-of-type > div:nth-of-type(2) p {
+  margin: 0px 10px;
+  font-size: 13px;
+  color: #989693;
+}
+.profile > div:last-of-type > div:nth-of-type(3) * {
+  margin: 10px 0px;
+  font-size: 13px;
+}
+.profile > div:last-of-type > div:nth-of-type(3) h3 {
+  font-weight: normal;
+}
+.profile > div:last-of-type > div:nth-of-type(3) p {
+  font-weight: lighter;
+}
+.profile .followButton {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 5px 20px 5px 10px;
+  border-radius: 5px;
+  background-color: #4e7fe0;
+}
+.profile .toggleDiv {
+  display: flex;
+  /* je potřeba ho dát doleva */
+}
+.profile .img {
+  width: 150px;
+  height: 150px;
+  margin-top: 20px;
+}
+
+.highlights {
+  display: flex;
+  justify-content: center;
+}
+.highlights > section {
+  text-align: center;
+  margin: 15px;
+}
+.highlights > section h2 {
+  margin-top: 10px;
+  font-size: 13px;
+}
+.highlights .img {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}
+.highlights h2 {
+  font-size: 15px;
+}
 
 /*# sourceMappingURL=style.css.map */
