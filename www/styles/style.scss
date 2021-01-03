@@ -22,7 +22,7 @@ body {
 
 //darkMode setup
 %dark-mode {
-  color: $darkModeTextColor !important;
+  color: $darkModeTextColor;
   background-color: $darkModeBackgroundColor;
   border-color: $darkModeTextColor;
   transition: .5s;
@@ -39,6 +39,10 @@ body {
 .fa-toggle-off, .fa-toggle-on {
   transition: .5s;
   cursor: pointer;
+}
+
+.fa-chevron-right, .fa-chevron-left {
+  color: #848484;
 }
 
 //nav
@@ -58,7 +62,7 @@ nav {
     color: darken($lightModeTextColor, 15);
   }
 
-  .fa-bars{
+  .fa-bars {
     display: none;
   }
 }
@@ -99,7 +103,6 @@ header {
       }
 
       h1 {
-        color: $lightGrayText;
         font-weight: lighter;
         margin-left: 0;
         font-size: $bigFont;
@@ -117,7 +120,11 @@ header {
       }
 
       p {
-        font-weight: lighter;
+        font-weight: normal;
+      }
+      a{
+        text-decoration: none;
+        color: #587C9D;
       }
     }
   }
@@ -143,9 +150,10 @@ header {
   justify-content: center;
   align-items: center;
 
-  .fas{
+  .fas {
     cursor: pointer;
   }
+
   > section {
     text-align: center;
     margin: 15px;
@@ -209,19 +217,20 @@ header {
     flex-direction: column;
     align-items: flex-end;
 
-    .fa-bars{
+    .fa-bars {
       margin-top: 15px;
       margin-right: 25px;
     }
 
-    div{
+    div {
       display: flex;
     }
+
     h1 {
       padding-bottom: 15px;
     }
   }
-  .profile{
+  .profile {
     flex-direction: column;
   }
 }

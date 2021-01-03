@@ -1,6 +1,6 @@
 * {
-  font-family: Helvetica, sans-serif;
-  color: #373737;
+  font-family: Roboto, Helvetica, sans-serif;
+  color: #636363;
   background-color: #ffffff;
   padding: 0;
   margin: 0;
@@ -17,9 +17,9 @@ body {
 }
 
 .darkMode *, .darkMode {
-  color: #d0cece !important;
-  background-color: #272728;
-  border-color: #d0cece;
+  color: #ffffff;
+  background-color: #1A1A1C;
+  border-color: #ffffff;
   transition: 0.5s;
 }
 
@@ -28,20 +28,24 @@ body {
   cursor: pointer;
 }
 
+.fa-chevron-right, .fa-chevron-left {
+  color: #848484;
+}
+
 nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   padding: 15px 30px 10px 10px;
-  border-bottom: #111111 2px solid;
+  border-bottom: #3d3d3d 2px solid;
 }
 nav a, nav h1 {
   font-variant: all-petite-caps;
   font-weight: lighter;
   text-decoration: none;
   padding: 0 15px;
-  color: #111111;
+  color: #3d3d3d;
 }
 nav .fa-bars {
   display: none;
@@ -79,7 +83,6 @@ header {
   margin: 10px;
 }
 .profile > div:last-of-type > div:nth-of-type(1) h1 {
-  color: #404040;
   font-weight: lighter;
   margin-left: 0;
   font-size: 25px;
@@ -92,7 +95,11 @@ header {
   font-weight: normal;
 }
 .profile > div:last-of-type > div:nth-of-type(2) p {
-  font-weight: lighter;
+  font-weight: normal;
+}
+.profile > div:last-of-type > div:nth-of-type(2) a {
+  text-decoration: none;
+  color: #587C9D;
 }
 .profile .toggleDiv {
   display: flex;
