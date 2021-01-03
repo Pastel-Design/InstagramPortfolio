@@ -17,9 +17,9 @@ body {
 }
 
 .darkMode *, .darkMode {
-  color: #ffffff;
-  background-color: #3f4047;
-  border-color: #ffffff;
+  color: #d0cece !important;
+  background-color: #272728;
+  border-color: #d0cece;
   transition: 0.5s;
 }
 
@@ -94,7 +94,7 @@ header {
 .profile .followButton {
   text-decoration: none;
   cursor: pointer;
-  color: #ffffff;
+  color: #d0cece;
   padding: 5px 20px 5px 10px;
   border-radius: 5px;
   background-color: #4e7fe0;

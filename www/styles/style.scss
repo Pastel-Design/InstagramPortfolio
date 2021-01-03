@@ -22,7 +22,7 @@ body {
 
 //darkMode setup
 %dark-mode {
-  color: $darkModeTextColor;
+  color: $darkModeTextColor !important;
   background-color: $darkModeBackgroundColor;
   border-color: $darkModeTextColor ;
   transition: .5s;
