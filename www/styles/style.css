@@ -23,6 +23,11 @@ body {
   transition: 0.5s;
 }
 
+.fa-toggle-off, .fa-toggle-on {
+  transition: 0.5s;
+  cursor: pointer;
+}
+
 nav {
   width: 100%;
   display: flex;
@@ -38,10 +43,8 @@ nav a, nav h1 {
   padding: 0 15px;
   color: #111111;
 }
-
-.fa-toggle-off, .fa-toggle-on {
-  transition: 0.5s;
-  cursor: pointer;
+nav .fa-bars {
+  display: none;
 }
 
 header {
@@ -91,14 +94,6 @@ header {
 .profile > div:last-of-type > div:nth-of-type(2) p {
   font-weight: lighter;
 }
-.profile .followButton {
-  text-decoration: none;
-  cursor: pointer;
-  color: #d0cece;
-  padding: 5px 20px 5px 10px;
-  border-radius: 5px;
-  background-color: #4e7fe0;
-}
 .profile .toggleDiv {
   display: flex;
   align-items: baseline;
@@ -115,6 +110,10 @@ header {
 .highlights {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.highlights .fas {
+  cursor: pointer;
 }
 .highlights > section {
   text-align: center;
@@ -131,6 +130,55 @@ header {
 }
 .highlights h2 {
   font-size: 15px;
+}
+
+@media screen and (max-width: 1240px) {
+  header {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1145px) {
+  header {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 995px) {
+  header {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 880px) {
+  header {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 690px) {
+  nav div {
+    display: none;
+  }
+  nav .fa-bars {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navShown {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .navShown .fa-bars {
+    margin-top: 15px;
+    margin-right: 25px;
+  }
+  .navShown div {
+    display: flex;
+  }
+  .navShown h1 {
+    padding-bottom: 15px;
+  }
+
+  .profile {
+    flex-direction: column;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
