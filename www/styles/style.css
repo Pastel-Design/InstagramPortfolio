@@ -1,10 +1,11 @@
-@charset "UTF-8";
 * {
   font-family: Helvetica, sans-serif;
-  color: #625e5e;
+  color: #373737;
   background-color: #ffffff;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  transition: 0.5s;
 }
 
 body {
@@ -18,6 +19,29 @@ body {
 .darkMode *, .darkMode {
   color: #ffffff;
   background-color: #3f4047;
+  border-color: #ffffff;
+  transition: 0.5s;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 15px 30px 10px 10px;
+  border-bottom: #111111 2px solid;
+}
+nav a, nav h1 {
+  font-variant: all-petite-caps;
+  font-weight: lighter;
+  text-decoration: none;
+  padding: 0 15px;
+  color: #111111;
+}
+
+.fa-toggle-off, .fa-toggle-on {
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 header {
@@ -52,28 +76,19 @@ header {
   margin: 10px;
 }
 .profile > div:last-of-type > div:nth-of-type(1) h1 {
-  color: #989693;
+  color: #404040;
   font-weight: lighter;
   margin-left: 0;
   font-size: 25px;
 }
-.profile > div:last-of-type > div:nth-of-type(2) {
-  display: flex;
-  padding: 15px 0px 25px 0px;
-}
-.profile > div:last-of-type > div:nth-of-type(2) p {
-  margin: 0px 10px;
-  font-size: 13px;
-  color: #989693;
-}
-.profile > div:last-of-type > div:nth-of-type(3) * {
+.profile > div:last-of-type > div:nth-of-type(2) * {
   margin: 10px 0px;
   font-size: 13px;
 }
-.profile > div:last-of-type > div:nth-of-type(3) h3 {
+.profile > div:last-of-type > div:nth-of-type(2) h3 {
   font-weight: normal;
 }
-.profile > div:last-of-type > div:nth-of-type(3) p {
+.profile > div:last-of-type > div:nth-of-type(2) p {
   font-weight: lighter;
 }
 .profile .followButton {
@@ -86,7 +101,10 @@ header {
 }
 .profile .toggleDiv {
   display: flex;
-  /* je potřeba ho dát doleva */
+  align-items: baseline;
+}
+.profile .toggleDiv .fas {
+  margin-right: 5px;
 }
 .profile .img {
   width: 150px;
