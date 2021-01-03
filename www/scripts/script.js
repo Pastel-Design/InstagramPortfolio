@@ -20,8 +20,8 @@ window.onload = () => {
 //listeners
     darkmodeToggleButton.addEventListener("click", setDarkmode);
     navBarsButton.addEventListener("click", showNav);
-    highlightLeftButton.addEventListener("click", changeHighlightsStartIndex.bind(false));
-    highlightRightButton.addEventListener("click", changeHighlightsStartIndex);
+    highlightLeftButton.addEventListener("click", changeHighlightsStartIndex.bind(false, null), false);
+    highlightRightButton.addEventListener("click", changeHighlightsStartIndex, false);
     window.addEventListener("resize",showHighlights);
 
 //functions
