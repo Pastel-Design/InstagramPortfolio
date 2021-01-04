@@ -15,14 +15,17 @@ class AlbumManager
     public function getAlbums(): array
     {
         $albums = DbManager::requestMultiple('
-        SELECT * FROM album
+        SELECT album.*,i.filename as cover_photo FROM album JOIN image i on album.cover_photo = i.id
         ');
-        $newAlbums = array();
-        foreach ($albums as $album) {
-            $album["cover_photo"] = DbManager::requestUnit('SELECT filename FROM image WHERE id = ?', [$album["cover_photo"]]);
-            array_push($newAlbums, $album);
-        }
-        return $newAlbums;
+        return $albums;
+    }
+
+    public function getAlumsHighlits(): array
+    {
+        $albums = DbManager::requestMultiple('
+        SELECT album.id,album.title,i.filename as cover_photo FROM album JOIN image i on album.cover_photo = i.id
+        ');
+        return $albums;
     }
 
     public function getAlbumImages($albumId)
@@ -32,10 +35,10 @@ class AlbumManager
         if (is_null($albumGroup)) {
             $images[0] = DbManager::requestMultiple("SELECT * FROM image WHERE album_id = ?", [$albumId]);
         } else {
-            $albums = DbManager::requestMultiple("SELECT id,title FROM album WHERE album_group_id = ?",[$albumGroup]);
-            foreach ($albums as $album){
+            $albums = DbManager::requestMultiple("SELECT id,title FROM album WHERE album_group_id = ?", [$albumGroup]);
+            foreach ($albums as $album) {
                 $imagesArray = DbManager::requestMultiple("SELECT * FROM image WHERE album_id = ?", [$album["id"]]);
-                $images[$album["title"]]=$imagesArray;
+                $images[$album["title"]] = $imagesArray;
             }
         }
         return $images;

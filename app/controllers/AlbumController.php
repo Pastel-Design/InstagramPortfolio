@@ -26,6 +26,10 @@ class AlbumController extends Controller
      */
     function process(array $params, array $gets = null)
     {
-
+        $this->head['page_title'] = "";
+        $this->head['page_keywords'] = "";
+        $this->head['page_description'] = "";
+        $this->setView('default');
+        var_dump($this->albumManager->getAlumsHighlits());
     }
 }

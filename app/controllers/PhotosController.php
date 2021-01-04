@@ -23,6 +23,9 @@ class PhotosController extends Controller
      */
     function process(array $params, array $gets = null)
     {
-        // TODO: Implement process() method.
+        $this->head['page_title'] = "";
+        $this->head['page_keywords'] = "";
+        $this->head['page_description'] = "";
+        $this->setView('default');
     }
 }
