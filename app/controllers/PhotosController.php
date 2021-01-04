@@ -23,6 +23,7 @@ class PhotosController extends Controller
      */
     function process(array $params, array $gets = null)
     {
+        $this->setView("default");
         // TODO: Implement process() method.
     }
 }
