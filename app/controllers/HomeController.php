@@ -1,27 +1,28 @@
 <?php
 
-
 namespace app\controllers;
 
 /**
- * Class PhotosController
+ * Controller DefaultController
+ *
  * @package app\controllers
  */
-class PhotosController extends Controller
+class HomeController extends Controller
 {
-
     public function __construct()
     {
         parent::__construct();
     }
 
     /**
-     * Sets photos page
+     * Sets default homepage
      *
-     * @param array $params
+     * @param array      $params
      * @param array|null $gets
+     *
+     * @return void
      */
-    function process(array $params, array $gets = null)
+    public function process(array $params, array $gets = null)
     {
         $this->head['page_title'] = "";
         $this->head['page_keywords'] = "";
