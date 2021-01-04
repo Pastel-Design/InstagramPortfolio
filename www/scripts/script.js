@@ -15,6 +15,14 @@ window.onload = () => {
     let highlightRightButton = document.getElementById("highlightsRightButton");
     let highlights = document.querySelectorAll(".highlights section");
     let highlightsStartIndex = 0
+
+//Basic setup
+    let currentTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
+    if (currentTheme){
+        if(currentTheme === "dark"){
+            setDarkmode();
+        }
+    }
     showHighlights();
 
 //listeners
@@ -30,10 +38,12 @@ window.onload = () => {
             darkmodeToggleButton.classList.replace("fa-toggle-off", "fa-toggle-on");
             bodyTag.classList.add("darkMode");
             isInDark = true;
+            localStorage.setItem("theme", "dark");
         } else {
             darkmodeToggleButton.classList.replace("fa-toggle-on", "fa-toggle-off");
             bodyTag.classList.remove("darkMode");
             isInDark = false;
+            localStorage.setItem("theme", "light");
         }
     }
 
