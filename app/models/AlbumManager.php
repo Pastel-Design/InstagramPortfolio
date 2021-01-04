@@ -10,24 +10,30 @@ namespace app\models;
 class AlbumManager
 {
     /**
-     *
+     * @return array
      */
     public function getAlbums(): array
     {
-        $albums = DbManager::requestMultiple('
+        return DbManager::requestMultiple('
         SELECT album.*,i.filename as cover_photo FROM album JOIN image i on album.cover_photo = i.id
         ');
-        return $albums;
     }
 
+    /**
+     * @return array
+     */
     public function getAlumsHighlits(): array
     {
-        $albums = DbManager::requestMultiple('
+        return DbManager::requestMultiple('
         SELECT album.id,album.title,i.filename as cover_photo FROM album JOIN image i on album.cover_photo = i.id
         ');
-        return $albums;
     }
 
+    /**
+     * @param $albumId
+     *
+     * @return array
+     */
     public function getAlbumImages($albumId)
     {
         $albumGroup = DbManager::requestUnit("SELECT album_group_id FROM album WHERE id=?", [$albumId]);
@@ -44,15 +50,21 @@ class AlbumManager
         return $images;
     }
 
+    /**
+     * @return array|void
+     */
     public function getAllImages()
     {
-        $images = DbManager::requestMultiple("SELECT * FROM image");
-        return $images;
+        return DbManager::requestMultiple("SELECT * FROM image");
     }
 
+    /**
+     * @param $imageId
+     *
+     * @return array|void
+     */
     public function getImage($imageId)
     {
-        $imageInfo = DbManager::requestSingle("SELECT * FROM image WHERE id = ?"[$imageId]);
-        return $imageInfo;
+        return DbManager::requestSingle("SELECT * FROM image WHERE id = ?"[$imageId]);
     }
 }
