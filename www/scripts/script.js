@@ -15,6 +15,7 @@ window.onload = () => {
     let highlightRightButton = document.getElementById("highlightsRightButton");
     let highlights = document.querySelectorAll(".highlights section");
     let highlightsStartIndex = 0
+    let highlightsOnPage;
 
 //Basic setup
     let currentTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
@@ -58,7 +59,7 @@ window.onload = () => {
     }
 
     function showHighlights() {
-        let highlightsOnPage = window.innerWidth <= 380 ? 2 : (window.innerWidth <= 480 ? 3 : (window.innerWidth <= 880 ? 4 : 6));
+        highlightsOnPage = window.innerWidth <= 380 ? 2 : (window.innerWidth <= 480 ? 3 : (window.innerWidth <= 880 ? 4 : 6));
         let highlightCounter = 0;
         for (let i = 0; i < highlights.length; i++) {
             if (i >= highlightsStartIndex && highlightCounter < highlightsOnPage) {
@@ -83,11 +84,10 @@ window.onload = () => {
 
     function changeHighlightsStartIndex(toTheRight = true) {
         if (toTheRight) {
-            highlightsStartIndex++;
+            highlightsStartIndex += highlightsOnPage;
         } else {
-            highlightsStartIndex--;
+            highlightsStartIndex -= highlightsOnPage;
         }
         showHighlights();
     }
-
 }

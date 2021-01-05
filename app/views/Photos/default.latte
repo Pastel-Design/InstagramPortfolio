@@ -1,6 +1,9 @@
 {extends "../@layout.latte"}
 {block content}
     {for $i = 0; $i< 15; $i++}
-        <div class="image"></div>
+        <div class="imageWrapper">
+            <div class="image" style="background-image: url('images/image001.jpg')"></div>
+        </div>
     {/for}
+    <dialog class="photoDialog"></dialog>
 {/block}
