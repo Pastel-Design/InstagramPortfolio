@@ -15,6 +15,22 @@ window.onload = () => {
     let highlightRightButton = document.getElementById("highlightsRightButton");
     let highlights = document.querySelectorAll(".highlights section");
     let highlightsStartIndex = 0
+    let highlightsOnPage;
+    //dialog vars
+    let photoDialog = document.getElementById("photoDialog");
+    let photos = document.querySelectorAll("article .image");
+    let imagesRightButton = document.getElementById("imagesRightButton");
+    let imagesLeftButton = document.getElementById("imagesLeftButton");
+    let displayedImage = document.querySelector("#photoDialog img");
+
+    console.log(photoDialog)
+//Basic setup
+    let currentTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
+    if (currentTheme) {
+        if (currentTheme === "dark") {
+            setDarkmode();
+        }
+    }
     showHighlights();
 
 //listeners
@@ -22,7 +38,12 @@ window.onload = () => {
     navBarsButton.addEventListener("click", showNav);
     highlightLeftButton.addEventListener("click", changeHighlightsStartIndex.bind(false, null), false);
     highlightRightButton.addEventListener("click", changeHighlightsStartIndex, false);
-    window.addEventListener("resize",showHighlights);
+    window.addEventListener("resize", showHighlights);
+    for (let photo of photos) {
+        console.log(photo.id);
+        photo.addEventListener("click", showImageDialog.bind(false, photo.id));
+    }
+    photoDialog.addEventListener("click", closeImageDialog);
 
 //functions
     function setDarkmode() {
@@ -30,10 +51,12 @@ window.onload = () => {
             darkmodeToggleButton.classList.replace("fa-toggle-off", "fa-toggle-on");
             bodyTag.classList.add("darkMode");
             isInDark = true;
+            localStorage.setItem("theme", "dark");
         } else {
             darkmodeToggleButton.classList.replace("fa-toggle-on", "fa-toggle-off");
             bodyTag.classList.remove("darkMode");
             isInDark = false;
+            localStorage.setItem("theme", "light");
         }
     }
 
@@ -48,7 +71,7 @@ window.onload = () => {
     }
 
     function showHighlights() {
-        let highlightsOnPage = window.innerWidth <= 380 ? 2 : (window.innerWidth <= 480 ? 3 : (window.innerWidth <= 880 ? 4 : 6));
+        highlightsOnPage = window.innerWidth <= 380 ? 2 : (window.innerWidth <= 480 ? 3 : (window.innerWidth <= 880 ? 4 : 6));
         let highlightCounter = 0;
         for (let i = 0; i < highlights.length; i++) {
             if (i >= highlightsStartIndex && highlightCounter < highlightsOnPage) {
@@ -64,7 +87,7 @@ window.onload = () => {
         } else {
             highlightRightButton.style.display = "block";
         }
-        if (highlightsStartIndex < highlightsOnPage - (highlightCounter-1)) {
+        if (highlightsStartIndex < highlightsOnPage - (highlightCounter - 1)) {
             highlightLeftButton.style.display = "none";
         } else {
             highlightLeftButton.style.display = "block";
@@ -73,11 +96,26 @@ window.onload = () => {
 
     function changeHighlightsStartIndex(toTheRight = true) {
         if (toTheRight) {
-            highlightsStartIndex++;
+            highlightsStartIndex += highlightsOnPage;
         } else {
-            highlightsStartIndex--;
+            highlightsStartIndex -= highlightsOnPage;
         }
         showHighlights();
     }
 
+    function showImageDialog(photoId) {
+        console.log(photoId)
+        if (typeof photoDialog.showModal === "function") {
+            displayedImage.src = document.getElementById(photoId).style.backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1];
+            photoDialog.showModal()
+            photoDialog.style.display = "flex";
+        } else {
+            alert("The <dialog> API is not supported by this browser");
+        }
+    }
+
+    function closeImageDialog() {
+        photoDialog.close();
+        photoDialog.style.display = "";
+    }
 }
