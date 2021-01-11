@@ -2,12 +2,18 @@
 {block content}
     {for $i = 0; $i < 15; $i++}
         <div class="imageWrapper">
-            <div class="image" id="image_{$i}" style="background-image: url('images/image001.jpg')"></div>
+            <div class="image" id="image_{$i}" style="background-image: url('images/image00{$i+1}.jpg')"></div>
         </div>
     {/for}
     <dialog id="photoDialog">
         <i class="fas fa-chevron-left" id="imagesLeftButton"></i>
+        <div class="photoInfo">
         <img src="../../../www/images/image003.jpg">
+        <div class="info">
+            <h3>Suprčuprobrázek</h3>
+            <p>Krátkej popisek k obrázku, kterej může být dlouhej lorem ipsum dolor sit <amet></amet></p>
+        </div>
+        </div>
         <i class="fas fa-chevron-right" id="imagesRightButton"></i>
     </dialog>
 {/block}

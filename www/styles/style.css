@@ -182,9 +182,18 @@ dialog {
   align-items: center;
   cursor: zoom-out;
 }
-dialog img {
-  max-width: 100%;
-  max-height: 80%;
+dialog .photoInfo {
+  max-width: 80vw;
+  max-height: 80vh;
+  background-color: salmon;
+  display: flex;
+  flex-wrap: wrap;
+}
+dialog .photoInfo .info {
+  padding: 15px;
+}
+dialog .photoInfo img {
+  height: 80vh;
   cursor: pointer;
 }
 dialog .fas {
