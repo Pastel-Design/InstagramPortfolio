@@ -5,6 +5,7 @@ namespace app\forms;
 
 
 use Nette\Forms\Form;
+use Nette\Forms\Controls\Checkbox as Checkbox;
 
 class ContactForm extends FormFactory
 {
@@ -30,6 +31,8 @@ class ContactForm extends FormFactory
             ->setRequired();
         /*! testovací checkbox*/$this->form->addCheckbox("CheckboxKarel", "Karel the checkbox");//!Testovací checkbox
         $this->form->addSubmit("submit", "SendMessage");
+
+        parent::makeFormEvenMoreBootstrapBecausePHPSucks($this->form);
 
         //if($this->form->isSubmitted()){ //This if statement is optional
         if ($this->form->isSuccess()) {
