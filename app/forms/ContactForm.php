@@ -19,15 +19,12 @@ class ContactForm extends FormFactory
     function create(callable $onSuccess): Form
     {
         $this->form->addText("name", "Name")
-            ->setHtmlAttribute("placeholder", "Your name")
             ->setRequired();
 
         $this->form->addText("email", "E-mail")
-            ->setHtmlAttribute("placeholder", "Your e-mail")
             ->setRequired();
 
         $this->form->addTextArea("message", "Message")
-            ->setHtmlAttribute("placeholder", "Write your message here...")
             ->setRequired();
         $this->form->addSubmit("submit", "Send");
 

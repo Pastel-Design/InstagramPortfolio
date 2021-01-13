@@ -143,7 +143,7 @@ header, article {
 article {
   border-top: 2px solid #7B7B7B;
   margin-top: 25px;
-  padding-top: 15px;
+  padding-top: 0px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -202,6 +202,15 @@ dialog .fas {
   cursor: pointer;
 }
 
+h4 {
+  border-top: 2px solid #7B7B7B;
+  margin-top: 0px;
+  padding: 8px 10px;
+  font-variant: all-small-caps;
+  top: -1px;
+  position: relative;
+}
+
 .contactForm {
   width: 100%;
 }
@@ -209,13 +218,30 @@ dialog .fas {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
+}
+.contactForm form input, .contactForm form textarea {
+  background-color: white;
+  color: black;
+  border: 2px solid #646464;
+  border-radius: 3px;
+  height: 36px;
+}
+.contactForm form textarea {
+  height: 150px;
 }
 .contactForm form input[type=text], .contactForm form input[type=email], .contactForm form texarea {
   width: 100%;
 }
 .contactForm form input[type=submit] {
-  width: 50px;
-  height: 30px;
+  width: 58px;
+  height: 37px;
+  margin-top: 15px;
+}
+.contactForm form label {
+  font-size: 13px;
+  padding-top: 16px;
+  padding-bottom: 15px;
 }
 
 @media screen and (max-width: 1310px) {
