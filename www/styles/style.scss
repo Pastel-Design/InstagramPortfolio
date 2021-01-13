@@ -236,8 +236,8 @@ dialog {
     flex-wrap: wrap;
 
     .info {
-     // max-width: 50%;
-      padding:15px;
+      // max-width: 50%;
+      padding: 15px;
     }
 
     img {
@@ -254,6 +254,25 @@ dialog {
   }
 }
 
+//contactForm
+
+.contactForm {
+  width: 100%;
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    input[type=text], input[type=email], texarea{
+      width: 100% ;
+    }
+    input[type=submit]{
+      width: 50px;
+      height: 30px;
+    }
+  }
+}
 
 //responsivity
 @media screen and (max-width: 1310px) {

@@ -202,6 +202,22 @@ dialog .fas {
   cursor: pointer;
 }
 
+.contactForm {
+  width: 100%;
+}
+.contactForm form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.contactForm form input[type=text], .contactForm form input[type=email], .contactForm form texarea {
+  width: 100%;
+}
+.contactForm form input[type=submit] {
+  width: 50px;
+  height: 30px;
+}
+
 @media screen and (max-width: 1310px) {
   article .image, article .imageWrapper {
     width: 205px;

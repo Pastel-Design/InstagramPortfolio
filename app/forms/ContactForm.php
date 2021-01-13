@@ -13,7 +13,7 @@ class ContactForm extends FormFactory
 
     public function __construct()
     {
-        $this->form = parent::getBootstrapForm("contactForm");
+        $this->form = parent::getForm("contactForm");
     }
 
     function create(callable $onSuccess): Form
@@ -29,10 +29,8 @@ class ContactForm extends FormFactory
         $this->form->addTextArea("message", "Message")
             ->setHtmlAttribute("placeholder", "Write your message here...")
             ->setRequired();
-        /*! testovací checkbox*/$this->form->addCheckbox("CheckboxKarel", "Karel the checkbox");//!Testovací checkbox
-        $this->form->addSubmit("submit", "SendMessage");
+        $this->form->addSubmit("submit", "Send");
 
-        parent::makeFormEvenMoreBootstrapBecausePHPSucks($this->form);
 
         //if($this->form->isSubmitted()){ //This if statement is optional
         if ($this->form->isSuccess()) {
