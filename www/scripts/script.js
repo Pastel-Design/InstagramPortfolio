@@ -49,6 +49,7 @@ window.onload = () => {
     imgDiv.addEventListener("click", e => e.stopPropagation());
     imagesRightButton.addEventListener("click", changeImageInDialog);
     imagesLeftButton.addEventListener("click", changeImageInDialog.bind(false, false));
+    displayedImage.addEventListener("click", changeImageInDialog);
 
 
 //functions
