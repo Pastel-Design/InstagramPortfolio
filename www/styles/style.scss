@@ -19,7 +19,8 @@ body {
   width: 100%;
   min-height: 100vh;
 }
-header,article{
+
+header, article {
   max-width: 1024px;
   width: 50%;
 }
@@ -200,12 +201,30 @@ article {
     background-size: cover;
   }
 
+  .album {
+    display: flex;
+    background-image: linear-gradient(black, black);
+    background-blend-mode: multiply;
+    justify-content: center;
+    align-items: center;
+    filter:blur(15%);
+    * {
+      padding: 0;
+      text-decoration: none;
+      background-color: rgba(0, 0, 0, 0);
+      color: $darkModeTextColor;
+    }
+  }
+
+
+
   .imageWrapper {
     display: inline-block;
     overflow: hidden;
     margin: 5px;
     width: $imageSizes;
     height: $imageSizes;
+    text-decoration: none;
   }
 
   .image:hover {
@@ -242,7 +261,10 @@ dialog {
     }
 
     img {
-      height: 80vh;
+      max-height: 80vh;
+      max-width: 80vw;
+      width: auto;
+      height: auto;
       cursor: pointer;
     }
   }
@@ -317,6 +339,7 @@ h4 {
   }
 
 }
+
 @media screen and (max-width: 1310px) {
 
   article {
@@ -350,11 +373,19 @@ h4 {
     }
   }
 
+  .photoInfo {
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+  }
 }
 
 @media screen and (max-width: 995px) {
   header, article {
-    width: 85%;
+    width: 80vw;
+    height: auto;
   }
 }
 

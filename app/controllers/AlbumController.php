@@ -4,6 +4,8 @@
 namespace app\controllers;
 
 use app\models\AlbumManager;
+use app\router\Router;
+
 /**
  * Class AlbumController
  *
@@ -11,10 +13,8 @@ use app\models\AlbumManager;
  */
 class AlbumController extends Controller
 {
-    public AlbumManager $albumManager;
     public function __construct()
     {
-        $this->albumManager = new AlbumManager;
         parent::__construct();
     }
 
@@ -29,7 +29,29 @@ class AlbumController extends Controller
         $this->head['page_title'] = "";
         $this->head['page_keywords'] = "";
         $this->head['page_description'] = "";
+
+        if(isset($params[0])){
+            if(is_numeric($params[0])){
+                $this->processSingleAlbum($params[0]);
+            }
+        }else{
+            $this->processDefault();
+        }
+
+    }
+
+    private function processSingleAlbum(int $albumId){
+        var_dump($albumId);
+        if(true){
+            $this->data["images"] = $this->albumManager->getAlbumImages($albumId);
+            $this->setView('singleAlbum');
+        }else{
+            Router::reroute("error/404");
+        }
+    }
+
+    private function processDefault(){
         $this->setView('default');
-        var_dump($this->albumManager->getAlumsHighlits());
+        $this->data["albums"] = $this->albumManager->getAlbums();
     }
 }

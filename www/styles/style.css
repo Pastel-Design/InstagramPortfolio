@@ -156,12 +156,27 @@ article .image {
   background-position: center;
   background-size: cover;
 }
+article .album {
+  display: flex;
+  background-image: linear-gradient(black, black);
+  background-blend-mode: multiply;
+  justify-content: center;
+  align-items: center;
+  filter: blur(15%);
+}
+article .album * {
+  padding: 0;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+}
 article .imageWrapper {
   display: inline-block;
   overflow: hidden;
   margin: 5px;
   width: 250px;
   height: 250px;
+  text-decoration: none;
 }
 article .image:hover {
   transform: scale(1.25);
@@ -193,7 +208,10 @@ dialog .photoInfo .info {
   padding: 15px;
 }
 dialog .photoInfo img {
-  height: 80vh;
+  max-height: 80vh;
+  max-width: 80vw;
+  width: auto;
+  height: auto;
   cursor: pointer;
 }
 dialog .fas {
@@ -273,10 +291,16 @@ h4 {
     width: 225px;
     height: 225px;
   }
+
+  .photoInfo img {
+    width: 100%;
+    height: auto;
+  }
 }
 @media screen and (max-width: 995px) {
   header, article {
-    width: 85%;
+    width: 80vw;
+    height: auto;
   }
 }
 @media screen and (max-width: 880px) {
