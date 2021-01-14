@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\AlbumManager;
 use Latte\Engine;
 use Transliterator;
 
@@ -38,8 +39,11 @@ abstract class Controller
      */
     private Engine $latte;
 
+    protected $albumManager;
+
     public function __construct()
     {
+        $this->albumManager = new AlbumManager();
         $this->latte = new Engine();
         $this->latte->addFilter("convertCountry", function ($countryCode) {
             switch ($countryCode) {
@@ -57,6 +61,8 @@ abstract class Controller
                     return $countryCode;
             }
         });
+
+        $this->data["highlights"] = $this->albumManager->getAlbumsHighlits();
     }
 
     /**

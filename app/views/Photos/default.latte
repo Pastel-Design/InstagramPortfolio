@@ -1,14 +1,16 @@
 {extends "../@layout.latte"}
 {block content}
-    {for $i = 0; $i < 15; $i++}
+    {var $i = 0}
+    {foreach $images as $image}
         <div class="imageWrapper">
-            <div class="image" id="image_{$i}" style="background-image: url('images/image00{$i+1}.jpg')"></div>
+            <div class="image" id="image_{$i}" style="background-image: url('images/thumbnail/{$image["filename"]}')"></div>
         </div>
-    {/for}
+        {php $i++}
+    {/foreach}
     <dialog id="photoDialog">
         <i class="fas fa-chevron-left" id="imagesLeftButton"></i>
         <div class="photoInfo">
-        <img src="../../../www/images/image003.jpg">
+        <img src="">
         <div class="info">
             <h3>Suprčuprobrázek</h3>
             <p>Krátkej popisek k obrázku, kterej může být dlouhej lorem ipsum dolor sit <amet></amet></p>

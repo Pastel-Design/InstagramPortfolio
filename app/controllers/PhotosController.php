@@ -3,6 +3,9 @@
 
 namespace app\controllers;
 
+use app\models\AlbumManager;
+use app\models\DbManager;
+
 /**
  * Class PhotosController
  * @package app\controllers
@@ -26,6 +29,7 @@ class PhotosController extends Controller
         $this->head['page_title'] = "";
         $this->head['page_keywords'] = "";
         $this->head['page_description'] = "";
+        $this->data["images"] = $this->albumManager->getAllImages();
         $this->setView('default');
     }
 }

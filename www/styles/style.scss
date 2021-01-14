@@ -19,6 +19,10 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+header,article{
+  max-width: 1024px;
+  width: 50%;
+}
 
 
 //darkMode setup
@@ -69,12 +73,9 @@ nav {
 }
 
 //header
-header, article {
-  width: 60%;
-}
+
 
 .img {
-  background-image: $imgSrc;
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -304,10 +305,23 @@ h4 {
 }
 
 //responsivity
+@media screen and (max-width: 1552px) {
+
+  article {
+    $imageSizes: 205px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+  }
+
+}
 @media screen and (max-width: 1310px) {
 
   article {
     $imageSizes: 205px;
+    width: 60%;
 
     .image, .imageWrapper {
       width: $imageSizes;

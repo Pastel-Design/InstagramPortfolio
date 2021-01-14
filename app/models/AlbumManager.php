@@ -22,7 +22,7 @@ class AlbumManager
     /**
      * @return array
      */
-    public function getAlumsHighlits(): array
+    public function getAlbumsHighlits(): array
     {
         return DbManager::requestMultiple('
         SELECT album.id,album.title,i.filename as cover_photo FROM album JOIN image i on album.cover_photo = i.id

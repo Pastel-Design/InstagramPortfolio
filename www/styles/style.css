@@ -17,6 +17,11 @@ body {
   min-height: 100vh;
 }
 
+header, article {
+  max-width: 1024px;
+  width: 50%;
+}
+
 .darkMode *, .darkMode {
   color: #ffffff;
   background-color: #1A1A1C;
@@ -52,12 +57,7 @@ nav .fa-bars {
   display: none;
 }
 
-header, article {
-  width: 60%;
-}
-
 .img {
-  background-image: url("../images/img.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -244,7 +244,16 @@ h4 {
   padding-bottom: 15px;
 }
 
+@media screen and (max-width: 1552px) {
+  article .image, article .imageWrapper {
+    width: 205px;
+    height: 205px;
+  }
+}
 @media screen and (max-width: 1310px) {
+  article {
+    width: 60%;
+  }
   article .image, article .imageWrapper {
     width: 205px;
     height: 205px;

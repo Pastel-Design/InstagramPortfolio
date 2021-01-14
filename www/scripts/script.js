@@ -113,7 +113,7 @@ window.onload = () => {
     function showImageDialog(photoId) {
         console.log(photoId)
         if (typeof photoDialog.showModal === "function") {
-            displayedImage.src = document.getElementById(photoId).style.backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1];
+            displayedImage.src = document.getElementById(photoId).style.backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1].replace(/thumbnail/,"fullview");
             displayedImage.id = photoId;
             photoDialog.showModal()
             photoDialog.style.display = "flex";
@@ -151,7 +151,7 @@ window.onload = () => {
         id = "image_" + currentImageId;
         displayedImage.id = id;
         console.log(displayedImage.id);
-        displayedImage.src = document.getElementById(id).style.backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1];
+        displayedImage.src = document.getElementById(id).style.backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1].replace(/thumbnail/,"fullview");
     }
 
 }
