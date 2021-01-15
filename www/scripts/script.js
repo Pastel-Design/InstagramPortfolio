@@ -84,7 +84,7 @@ window.onload = () => {
     }
 
     function showHighlights() {
-        highlightsOnPage = window.innerWidth <= 380 ? 2 : (window.innerWidth <= 480 ? 3 : (window.innerWidth <= 880 ? 4 : 6));
+        highlightsOnPage = window.innerWidth <= 400 ? 2 : (window.innerWidth <= 552 ? 3 : (window.innerWidth <= 880 ? 4 : 6));
         let highlightCounter = 0;
         for (let i = 0; i < highlights.length; i++) {
             if (i >= highlightsStartIndex && highlightCounter < highlightsOnPage) {

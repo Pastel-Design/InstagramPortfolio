@@ -30,23 +30,35 @@ class AlbumController extends Controller
         $this->head['page_title'] = $this->head["page_title"] . " | Album";
 
 
-        if(isset($params[0])){
-            if(is_numeric($params[0])){
-                $this->processSingleAlbum($params[0]);
-            }
-        }else{
+        if (isset($params[0])) {
+            $this->processSingleAlbum($params[0]);
+        } else {
             $this->processDefault();
         }
 
     }
 
-    private function processSingleAlbum(int $albumId){
-        var_dump($albumId);
-        $this->setView('singleAlbum');
-        var_dump($this->albumManager->getAlbumImages($albumId));
+    /**
+     * Sets single album page
+     * @param string $albumTitle
+     */
+    private function processSingleAlbum(string $albumTitle)
+    {
+        if ($this->albumManager->albumExists($albumTitle)) {
+            $this->data["info"] = $this->albumManager->getAlbumInfo($albumTitle);
+            $this->data["images"] = $this->albumManager->getAlbumImages($albumTitle);
+            $this->setView("singleAlbum");
+        } else {
+            Router::reroute("album");
+        }
     }
 
-    private function processDefault(){
+
+    /**
+     * Sets main albums page
+     */
+    private function processDefault()
+    {
         $this->setView('default');
         $this->data["albums"] = $this->albumManager->getAlbums();
     }

@@ -1,4 +1,26 @@
 {extends "../@layout.latte"}
 {block content}
- <h1>ahoj</h1>
+    <h1>{$info["title"]}</h1>
+    <div class="images">
+        {var $i = 0}
+    {foreach $images as $image}
+            <div class="imageWrapper">
+                <div class="image lazyload" id="image_{$i}" data-bg="images/thumbnail/{$image["filename"]}"></div>
+            </div>
+            {php $i++}
+        {/foreach}
+        <dialog id="photoDialog">
+            <i class="fas fa-chevron-left" id="imagesLeftButton"></i>
+            <div class="photoInfo">
+                <img src="">
+                <div class="info">
+                    <h3>Suprčuprobrázek</h3>
+                    <p>Krátkej popisek k obrázku, kterej může být dlouhej lorem ipsum dolor sit
+                        <amet></amet>
+                    </p>
+                </div>
+            </div>
+            <i class="fas fa-chevron-right" id="imagesRightButton"></i>
+        </dialog>
+    </div>
 {/block}

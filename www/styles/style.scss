@@ -165,7 +165,7 @@ nav {
     margin: 15px;
     padding: 10px;
     height: 165px;
-    max-width: 100px;
+    max-width: 95px;
 
     h2 {
       margin-top: 10px;
@@ -185,6 +185,15 @@ nav {
 }
 
 //article
+.images {
+  margin-top: 25px;
+  padding-top: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
 article {
   border-top: 2px solid $lightGrayText;
@@ -212,7 +221,8 @@ article {
     background-blend-mode: multiply;
     justify-content: center;
     align-items: center;
-    filter:blur(15%);
+    filter: blur(15%);
+
     * {
       padding: 0;
       text-decoration: none;
@@ -220,7 +230,6 @@ article {
       color: $darkModeTextColor;
     }
   }
-
 
 
   .imageWrapper {

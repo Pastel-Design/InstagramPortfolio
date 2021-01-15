@@ -10,13 +10,48 @@ namespace app\models;
 class AlbumManager
 {
     /**
+     * @param $albumTitle
+     *
+     * @return bool
+     */
+    public function albumExists($albumTitle)
+    {
+        return DbManager::requestAffect("SELECT dash_title FROM album WHERE dash_title=?", [$albumTitle]) == 1;
+    }
+
+    /**
+     * @param $dashtitle
+     *
+     * @return array|false|void
+     */
+    public function getAlbumInfo($dashtitle)
+    {
+        if (DbManager::requestAffect("SELECT dash_title FROM album WHERE dash_title=?", [$dashtitle]) === 1) {
+            $album = DbManager::requestSingle("SELECT * FROM album WHERE album.dash_title=?", [$dashtitle]);
+            $images = DbManager::requestMultiple("SELECT * FROM image WHERE album_id = ?", [$album["id"]]);
+            $album["images"] = $images;
+            return $album;
+        } else {
+            return false;
+        }
+    }
+
+    /**
      * @return array
      */
     public function getAlbums(): array
     {
-        return DbManager::requestMultiple('
-        SELECT album.*,i.filename as cover_photo FROM album JOIN image i on album.cover_photo = i.id
-        ');
+        $albums = DbManager::requestMultiple("SELECT id,title,dash_title,cover_photo,no_photos,visible FROM album ORDER BY `order`");
+        $newAlbums = array();
+        foreach ($albums as $album) {
+            if ($album["cover_photo"] == Null) {
+                $album["cover_photo"] = DbManager::requestUnit("SELECT filename FROM image WHERE album_id = ? ORDER BY id LIMIT 1", [$album["id"]]);
+            } else {
+                $album["cover_photo"] = DbManager::requestUnit("SELECT filename FROM image WHERE id = ?", [$album["cover_photo"]]);
+            }
+            array_push($newAlbums, $album);
+        }
+        return $newAlbums;
     }
 
     /**
@@ -25,29 +60,39 @@ class AlbumManager
     public function getAlbumsHighlits(): array
     {
         return DbManager::requestMultiple('
-        SELECT album.id,album.title,i.filename as cover_photo FROM album JOIN image i on album.cover_photo = i.id
+        SELECT album.id,album.dash_title,album.title,i.filename as cover_photo FROM album JOIN image i on album.cover_photo = i.id
         ');
     }
 
     /**
-     * @param $albumId
+     * @param $title
      *
      * @return array
      */
-    public function getAlbumImages($albumId)
+    public function getAlbumImages($title)
     {
-        $albumGroup = DbManager::requestUnit("SELECT album_group_id FROM album WHERE id=?", [$albumId]);
-        $images = [];
-        if (is_null($albumGroup)) {
-            $images[0] = DbManager::requestMultiple("SELECT * FROM image WHERE album_id = ?", [$albumId]);
-        } else {
-            $albums = DbManager::requestMultiple("SELECT id,title FROM album WHERE album_group_id = ?", [$albumGroup]);
-            foreach ($albums as $album) {
-                $imagesArray = DbManager::requestMultiple("SELECT * FROM image WHERE album_id = ?", [$album["id"]]);
-                $images[$album["title"]] = $imagesArray;
+        $newImages = array();
+        $albumId = DbManager::requestUnit("SELECT id FROM album WHERE dash_title = ?", [$title]);
+        $images = DbManager::requestMultiple("SELECT * FROM image WHERE album_id = ? ORDER BY `order`", [$albumId]);
+        foreach ($images as $image) {
+            if (DbManager::requestUnit("SELECT cover_photo FROM album WHERE id=?", [$albumId]) == $image["id"]) {
+                $image["cover_photo"] = true;
+            } else {
+                $image["cover_photo"] = false;
             }
+            array_push($newImages, $image);
         }
-        return $images;
+        return $newImages;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return bool
+     */
+    public function imageExists(int $id)
+    {
+        return DbManager::requestAffect("SELECT id FROM image WHERE id=?", [$id]) == 1;
     }
 
     /**

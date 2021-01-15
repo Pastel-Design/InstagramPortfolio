@@ -130,7 +130,7 @@ nav .fa-bars {
   margin: 15px;
   padding: 10px;
   height: 165px;
-  max-width: 100px;
+  max-width: 95px;
 }
 .highlights > a h2 {
   margin-top: 10px;
@@ -143,6 +143,16 @@ nav .fa-bars {
 }
 .highlights h2 {
   font-size: 15px;
+}
+
+.images {
+  margin-top: 25px;
+  padding-top: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 article {
