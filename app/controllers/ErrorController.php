@@ -33,7 +33,7 @@ class ErrorController extends Controller
         } else {
             $errCode = "404";
         }
-        $this->head['page_title'] = 'Error ' . $errCode;
+        $this->head['page_title'] = 'Error ' . $errCode . " " . $this->head['page_title'];
         $this->head['page_keywords'] = "error";
         $this->head['page_description'] = "Error occurred " . $errCode;
         $this->view = $errCode;

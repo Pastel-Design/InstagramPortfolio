@@ -3,7 +3,7 @@
     {var $i = 0}
     {foreach $images as $image}
         <div class="imageWrapper">
-            <div class="image" id="image_{$i}" style="background-image: url('images/thumbnail/{$image["filename"]}')"></div>
+            <div class="image lazyload" id="image_{$i}" data-bg="images/thumbnail/{$image["filename"]}"></div>
         </div>
         {php $i++}
     {/foreach}

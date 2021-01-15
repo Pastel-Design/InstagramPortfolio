@@ -11,12 +11,16 @@
     <meta name="keywords" content="{$page_keywords}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../www/styles/style.css?v={time()}" type="text/css"/>
+    <!-- minilazyload -->
+    <script src="https://cdn.jsdelivr.net/npm/minilazyload@2.3.3/dist/minilazyload.min.js?v={time()}"></script>
+    <!-- minilazyload -->
     <script src="../node_modules/axios/dist/axios.js?v={time()}" async></script>
     <script src="../../www/scripts/script.js" async></script>
     <script src="../../www/scripts/ajax.js" async></script>
     <!--- fontawesome -->
     <script src="https://kit.fontawesome.com/748c10f0ee.js" crossorigin="anonymous"></script>
     <!-- fontawesome -->
+
 </head>
 <body>
 <nav>
@@ -32,35 +36,31 @@
 <header>
     <div class="profile">
         <div>
-            <div class="img"></div>
+            <div class="img" style="background-image: url('../images/thumbnail/{$profileImage}')"></div>
         </div>
         <div>
             <div>
                 <h1>garethjorden</h1>
-                <a class="fa fa-instagram"></a>
-                <a class="fa fa-twitter"></a>
+                <a class="fa fa-instagram" href="{$instagramLink}" target="_blank"></a>
+                <a class="fa fa-twitter" href="{$twitterLink}" target="_blank"></a>
                 <div class="toggleDiv">
                     <i class="fas fa-toggle-off" id="darkmodeToggleButton"></i>
                     <p>Dark mode</p>
                 </div>
             </div>
             <div>
-                <h3>Gareth Jorden</h3>
-                <p>consectetur adipisicing elit.</p>
-                <p>A adipisci alias debitis deleniti, deserunt dolorem,</p>
-                <p>eos impedit incidunt ipsa laboriosam magnam</p>
-                <p>maiores numquam officia placeat porro quidem recusandae sequi sunt.</p>
+                <h3>{$bio["bio_title"]}</h3>
+                <p>{$bio["bio_description"]}</p>
             </div>
         </div>
     </div>
     <div class="highlights">
         <i class="fas fa-chevron-left" id="highlightsLeftButton"></i>
-
         {foreach $highlights as $highlight}
-            <section>
-                <div class="img" style='background-image: url("../images/{$highlight["cover_photo"]}")'></div>
+            <a href="album/{$highlight["id"]}">
+                <div class="img" style='background-image: url("../images/thumbnail/{$highlight["cover_photo"]}")'></div>
                 <h2>{$highlight["title"]}</h2>
-            </section>
+            </a>
         {/foreach}
         <i class="fas fa-chevron-right" id="highlightsRightButton"></i>
     </div>

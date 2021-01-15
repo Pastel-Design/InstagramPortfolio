@@ -3,7 +3,7 @@
     {var $i = 0}
     {foreach $albums as $album}
         <a href="/album/{$album["id"]}" class="imageWrapper">
-            <div class="image album" id="image_{$i}" style="background-image: url('images/thumbnail/{$album["cover_photo"]}')"><p>{$album["title"]}</p></div>
+            <div class="image album lazyload" id="image_{$i}" data-bg='images/thumbnail/{$album["cover_photo"]}'><p>{$album["title"]}</p></div>
         </a>
         {php $i++}
     {/foreach}

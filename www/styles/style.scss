@@ -10,6 +10,7 @@
   box-sizing: border-box;
   transition: .5s;
   scroll-behavior: smooth;
+  text-decoration: none;
 }
 
 body {
@@ -158,9 +159,13 @@ nav {
     cursor: pointer;
   }
 
-  > section {
+  > a {
+    display: none;
     text-align: center;
     margin: 15px;
+    padding: 10px;
+    height: 165px;
+    max-width: 100px;
 
     h2 {
       margin-top: 10px;

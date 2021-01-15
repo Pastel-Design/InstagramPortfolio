@@ -26,9 +26,7 @@ class PhotosController extends Controller
      */
     function process(array $params, array $gets = null)
     {
-        $this->head['page_title'] = "";
-        $this->head['page_keywords'] = "";
-        $this->head['page_description'] = "";
+        $this->head['page_title'] = $this->head['page_title'] . " | Photos";
         $this->data["images"] = $this->albumManager->getAllImages();
         $this->setView('default');
     }

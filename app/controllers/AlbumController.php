@@ -4,6 +4,7 @@
 namespace app\controllers;
 
 use app\models\AlbumManager;
+use app\models\DbManager;
 use app\router\Router;
 
 /**
@@ -26,9 +27,8 @@ class AlbumController extends Controller
      */
     function process(array $params, array $gets = null)
     {
-        $this->head['page_title'] = "";
-        $this->head['page_keywords'] = "";
-        $this->head['page_description'] = "";
+        $this->head['page_title'] = $this->head["page_title"] . " | Album";
+
 
         if(isset($params[0])){
             if(is_numeric($params[0])){
@@ -42,12 +42,8 @@ class AlbumController extends Controller
 
     private function processSingleAlbum(int $albumId){
         var_dump($albumId);
-        if(true){
-            $this->data["images"] = $this->albumManager->getAlbumImages($albumId);
-            $this->setView('singleAlbum');
-        }else{
-            Router::reroute("error/404");
-        }
+        $this->setView('singleAlbum');
+        var_dump($this->albumManager->getAlbumImages($albumId));
     }
 
     private function processDefault(){

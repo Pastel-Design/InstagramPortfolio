@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\AlbumManager;
+use app\models\InfoManager;
 use Latte\Engine;
 use Transliterator;
 
@@ -40,10 +41,13 @@ abstract class Controller
     private Engine $latte;
 
     protected $albumManager;
+    private $infoManager;
 
     public function __construct()
     {
         $this->albumManager = new AlbumManager();
+        $this->infoManager = new InfoManager();
+
         $this->latte = new Engine();
         $this->latte->addFilter("convertCountry", function ($countryCode) {
             switch ($countryCode) {
@@ -63,6 +67,17 @@ abstract class Controller
         });
 
         $this->data["highlights"] = $this->albumManager->getAlbumsHighlits();
+        $this->data["bio"] = $this->infoManager->getBio();
+        $this->data["instagramLink"] = $this->infoManager->getInstagramLink();
+        $this->data["twitterLink"] = $this->infoManager->getTwitterLink();
+        $this->data["profileImage"] = $this->infoManager->getProfileImage();
+
+
+
+        $this->head["page_title"] = $this->infoManager->getPageTitle();
+        $this->head["page_keywords"] = $this->infoManager->getPageKeywords();
+        $this->head["page_description"] = $this->infoManager->getPageDescription();
+
     }
 
     /**

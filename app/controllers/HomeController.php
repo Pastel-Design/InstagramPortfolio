@@ -24,9 +24,7 @@ class HomeController extends Controller
      */
     public function process(array $params, array $gets = null)
     {
-        $this->head['page_title'] = "";
-        $this->head['page_keywords'] = "";
-        $this->head['page_description'] = "";
+        $this->head['page_title'] =$this->head['page_title'] . " | Home";
         $this->setView('default');
     }
 }

@@ -7,6 +7,7 @@
   box-sizing: border-box;
   transition: 0.5s;
   scroll-behavior: smooth;
+  text-decoration: none;
 }
 
 body {
@@ -123,11 +124,15 @@ nav .fa-bars {
 .highlights .fas {
   cursor: pointer;
 }
-.highlights > section {
+.highlights > a {
+  display: none;
   text-align: center;
   margin: 15px;
+  padding: 10px;
+  height: 165px;
+  max-width: 100px;
 }
-.highlights > section h2 {
+.highlights > a h2 {
   margin-top: 10px;
   font-size: 13px;
 }

@@ -1,6 +1,11 @@
 'use strict'
 
 window.onload = () => {
+    new MiniLazyload({
+        rootMargin: "500px",
+        placeholder: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"
+    }, ".lazyload", MiniLazyload.IGNORE_NATIVE_LAZYLOAD)
+
 //variables
     //darkmode vars
     let bodyTag = document.querySelector("body");
@@ -13,7 +18,7 @@ window.onload = () => {
     //highlights vars
     let highlightLeftButton = document.getElementById("highlightsLeftButton");
     let highlightRightButton = document.getElementById("highlightsRightButton");
-    let highlights = document.querySelectorAll(".highlights section");
+    let highlights = document.querySelectorAll(".highlights a");
     let highlightsStartIndex = 0
     let highlightsOnPage;
     //dialog vars
@@ -25,6 +30,7 @@ window.onload = () => {
     let imgDiv = document.querySelector(".photoInfo");
 
 //Basic setup
+
     let currentTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
     if (currentTheme) {
         if (currentTheme === "dark") {
@@ -113,7 +119,7 @@ window.onload = () => {
     function showImageDialog(photoId) {
         console.log(photoId)
         if (typeof photoDialog.showModal === "function") {
-            displayedImage.src = document.getElementById(photoId).style.backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1].replace(/thumbnail/,"fullview");
+            displayedImage.src = document.getElementById(photoId).style.backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1].replace(/thumbnail/, "fullview");
             displayedImage.id = photoId;
             photoDialog.showModal()
             photoDialog.style.display = "flex";
@@ -151,7 +157,7 @@ window.onload = () => {
         id = "image_" + currentImageId;
         displayedImage.id = id;
         console.log(displayedImage.id);
-        displayedImage.src = document.getElementById(id).style.backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1].replace(/thumbnail/,"fullview");
+        displayedImage.src = document.getElementById(id).style.backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1].replace(/thumbnail/, "fullview");
     }
 
 }
