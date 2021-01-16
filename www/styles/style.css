@@ -216,10 +216,7 @@ dialog .photoInfo {
   max-height: 80vh;
   background-color: salmon;
   display: flex;
-  flex-flow: row nowrap;
-}
-dialog .photoInfo .info {
-  padding: 15px;
+  flex-flow: column nowrap;
 }
 dialog .photoInfo img {
   max-height: 80vh;

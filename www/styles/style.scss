@@ -267,12 +267,7 @@ dialog {
     max-height: 80vh;
     background-color: salmon;
     display: flex;
-    flex-flow: row nowrap;
-
-    .info {
-      // max-width: 50%;
-      padding: 15px;
-    }
+    flex-flow: column nowrap;
 
     img {
       max-height: 80vh;
