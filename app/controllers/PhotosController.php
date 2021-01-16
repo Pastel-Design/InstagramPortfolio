@@ -28,6 +28,7 @@ class PhotosController extends Controller
     {
         $this->head['page_title'] = $this->head['page_title'] . " | Photos";
         $this->data["images"] = $this->albumManager->getAllImages();
+        var_dump(count($this->data["images"]));
         $this->setView('default');
     }
 }

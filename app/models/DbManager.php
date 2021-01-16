@@ -46,7 +46,7 @@ class DbManager
     }
 
     /**
-     * Request single row from databse
+     * Request single row from database
      *
      * @param string $sql
      * @param array  $params
@@ -59,7 +59,7 @@ class DbManager
             $result = self::$connection->prepare($sql);
             $result->execute($params);
             return $result->fetch(PDO::FETCH_ASSOC);
-        } catch (PDOException $excepiton) {
+        } catch (PDOException $exception) {
             Router::reroute("error/500");
         }
     }
@@ -81,7 +81,7 @@ class DbManager
             $result->execute($params);
             $result->setFetchMode(PDO::FETCH_CLASS, $class);
             return $result->fetch();
-        } catch (PDOException $excepiton) {
+        } catch (PDOException $exception) {
             Router::reroute("error/500");
         }
     }
@@ -100,7 +100,7 @@ class DbManager
             $result = self::$connection->prepare($sql);
             $result->execute($params);
             return $result->fetch();
-        } catch (PDOException $excepiton) {
+        } catch (PDOException $exception) {
             Router::reroute("error/500");
         }
     }
@@ -119,7 +119,7 @@ class DbManager
             $result = self::$connection->prepare($sql);
             $result->execute($params);
             return $result->fetchAll(PDO::FETCH_ASSOC);
-        } catch (PDOException $excepiton) {
+        } catch (PDOException $exception) {
             Router::reroute("error/500");
         }
     }
@@ -137,7 +137,7 @@ class DbManager
         try {
             $result = self::requestSingleWOAssoc($sql, $params);
             return ($result == null ? null : $result[0]);
-        } catch (PDOException $excepiton) {
+        } catch (PDOException $exception) {
             Router::reroute("error/500");
         }
     }
@@ -157,8 +157,8 @@ class DbManager
             $result = self::$connection->prepare($sql);
             self::$connection->commit();
             return $result->execute($params);
-        } catch (PDOException $excepiton) {
-            var_dump($excepiton);
+        } catch (PDOException $exception) {
+            var_dump($exception);
             self::$connection->rollback();
             return false;
         }
@@ -181,8 +181,8 @@ class DbManager
             $result->execute($params);
             self::$connection->commit();
             return $result->rowCount();
-        } catch (PDOException $excepiton) {
-            var_dump($excepiton);
+        } catch (PDOException $exception) {
+            var_dump($exception);
             self::$connection->rollback();
             return false;
         }

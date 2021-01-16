@@ -100,7 +100,7 @@ class AlbumManager
      */
     public function getAllImages()
     {
-        return DbManager::requestMultiple("SELECT * FROM image");
+        return DbManager::requestMultiple("SELECT * FROM image WHERE album_id IS NULL");
     }
 
     /**

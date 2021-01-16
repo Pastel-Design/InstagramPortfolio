@@ -8,7 +8,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  transition: .5s;
+  //transition: .5s;
   scroll-behavior: smooth;
   text-decoration: none;
 }
@@ -213,6 +213,7 @@ article {
     height: $imageSizes;
     background-position: center;
     background-size: cover;
+    object-fit: cover;
   }
 
   .album {
@@ -260,14 +261,13 @@ dialog {
   //display: flex; ! nesmí mít display jinak nebude fungovat, je pořteba nastavit v js
   justify-content: space-evenly;
   align-items: center;
-  cursor: zoom-out;
 
   .photoInfo {
     max-width: 80vw;
     max-height: 80vh;
     background-color: salmon;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row nowrap;
 
     .info {
       // max-width: 50%;
@@ -283,11 +283,23 @@ dialog {
     }
   }
 
+  .fas-container {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 8px;
+    width: 80px;
+    height: 120px;
+    cursor: pointer;
+  }
 
   .fas {
     font-size: 30px;
     background-color: rgba(0, 0, 0, 0);
-    cursor: pointer;
+
   }
 }
 
