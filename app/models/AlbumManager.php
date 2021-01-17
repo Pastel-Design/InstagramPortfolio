@@ -110,6 +110,6 @@ class AlbumManager
      */
     public function getImage($imageId)
     {
-        return DbManager::requestSingle("SELECT * FROM image WHERE id = ?"[$imageId]);
+        return DbManager::requestSingle("SELECT * FROM image WHERE id = ?",[$imageId]);
     }
 }

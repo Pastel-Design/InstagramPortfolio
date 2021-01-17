@@ -6,18 +6,19 @@
             <div class="image lazyload" id="image_{$i}" data-bg="images/thumbnail/{$image["filename"]}"></div>
         </div>-->
         <div class="imageWrapper">
-            <img src="images/thumbnail/{$image["filename"]}" width="350" class="image lazyload" loading="lazy" id="image_{$i}" data-bg="images/thumbnail/{$image["filename"]}">
+            <img src="images/thumbnail/{$image["filename"]}" width="350" class="image lazyload" loading="lazy"
+                 id="image_{$i}" img-info-id="{$image["id"]}" data-bg="images/thumbnail/{$image["filename"]}">
         </div>
         {php $i++}
     {/foreach}
     <dialog id="photoDialog">
         <i class="fas fa-chevron-left" id="imagesLeftButton"></i>
         <div class="photoInfo">
-        <img src="">
-        <div class="info">
-            <h3></h3>
-            <p></p>
-        </div>
+            <img src="">
+            <div class="info">
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
         <i class="fas fa-chevron-right" id="imagesRightButton"></i>
     </dialog>

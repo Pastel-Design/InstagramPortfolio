@@ -8,6 +8,7 @@ let imgDiv = document.querySelector(".photoInfo");
 if (photoDialog) {
     for (let photo of photos) {
         photo.addEventListener("click", showImageDialog.bind(false, photo.id));
+        photo.addEventListener("click", setImageText.bind(false, photo.getAttribute("img-info-id")));
     }
     photoDialog.addEventListener("click", closeImageDialog);
     imagesLeftButton.addEventListener("click", e => e.stopPropagation());
@@ -57,4 +58,32 @@ export function changeImageInDialog(toTheRight = true) {
     id = "image_" + currentImageId;
     displayedImage.id = id;
     displayedImage.src = document.getElementById(id).src.replace(/thumbnail/, "fullview");
+    setImageText(document.getElementById(id).getAttribute("img-info-id"))
+}
+
+export function setImageText(imageId) {
+    axios.get('/handle/getImageText', {
+        params: {
+            "imageId": imageId,
+        }
+    })
+        .then(function (response) {
+            setImageTextDom(response.data.response);
+        })
+        .catch(function (error) {
+            setImageTextDom(null, false)
+        })
+        .then(function () {
+            // always executed
+        });
+}
+
+export function setImageTextDom(response, iserr = true) {
+    if (iserr) {
+        document.querySelector("dialog .info h3").textContent = response.title;
+        document.querySelector("dialog .info p").textContent = response.description;
+    } else {
+        document.querySelector("dialog .info h3").textContent = "";
+        document.querySelector("dialog .info p").textContent = "";
+    }
 }
