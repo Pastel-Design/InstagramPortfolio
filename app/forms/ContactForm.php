@@ -4,6 +4,7 @@
 namespace app\forms;
 
 
+use Exception;
 use Nette\Forms\Form;
 use Nette\Forms\Controls\Checkbox as Checkbox;
 
@@ -29,11 +30,14 @@ class ContactForm extends FormFactory
         $this->form->addSubmit("submit", "Send");
 
 
-        //if($this->form->isSubmitted()){ //This if statement is optional
         if ($this->form->isSuccess()) {
-            // TODO: implement on success behavior
+            $values = $this->form->getValues("array");
+            try {
+                $onSuccess($values);
+            } catch (Exception $exception) {
+                $this->form->addError($exception->getMessage());
+            }
         }
-        //}
 
         return $this->form;
     }
