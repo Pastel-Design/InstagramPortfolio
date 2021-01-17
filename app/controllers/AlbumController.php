@@ -27,7 +27,7 @@ class AlbumController extends Controller
      */
     function process(array $params, array $gets = null)
     {
-        $this->head['page_title'] = $this->head["page_title"] . " | Album";
+        $this->head['page_title'] .= " | Album";
 
 
         if (isset($params[0])) {

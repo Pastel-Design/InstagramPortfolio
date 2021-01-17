@@ -26,7 +26,6 @@ header, article {
   color: #ffffff;
   background-color: #1A1A1C;
   border-color: #ffffff;
-  transition: 0.5s;
 }
 
 .fa-toggle-off, .fa-toggle-on {
