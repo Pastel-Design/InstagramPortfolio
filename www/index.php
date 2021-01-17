@@ -25,6 +25,7 @@ try {
     DbManager::connect(DbConfig::$host, DbConfig::$username, DbConfig::$pass, DbConfig::$database);
 } catch (PDOException $exception) {
    // Router::reroute("error/500");
+    var_dump($exception);
 }
 $router = new Router();
 $router->process(array($_SERVER['REQUEST_URI']));

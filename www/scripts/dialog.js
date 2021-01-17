@@ -20,7 +20,7 @@ if (photoDialog) {
 
 export function showImageDialog(photoId) {
     if (typeof photoDialog.showModal === "function") {
-        displayedImage.src = document.getElementById(photoId).getAttribute("src").replace(/thumbnail/, "fullview");
+        displayedImage.src = document.getElementById(photoId).src.replace(/thumbnail/, "fullview");
         displayedImage.id = photoId;
         photoDialog.showModal()
         photoDialog.style.display = "flex";
@@ -56,5 +56,5 @@ export function changeImageInDialog(toTheRight = true) {
     }
     id = "image_" + currentImageId;
     displayedImage.id = id;
-    displayedImage.src = document.getElementById(id).style.backgroundImage.match(/url\(["']?([^"']*)["']?\)/)[1].replace(/thumbnail/, "fullview");
+    displayedImage.src = document.getElementById(id).src.replace(/thumbnail/, "fullview");
 }
