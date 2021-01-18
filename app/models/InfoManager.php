@@ -54,7 +54,7 @@ class InfoManager
      */
     public function getProfileImage()
     {
-        return DbManager::requestUnit("SELECT filename FROM profile_image ORDER BY id DESC LIMIT 1");
+        return DbManager::requestUnit("SELECT profile_picture FROM web_info ORDER BY id DESC LIMIT 1");
     }
 
     /**
