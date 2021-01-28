@@ -2,7 +2,8 @@ import * as darkmode from "./darkmode.js";
 import * as dialog from "./dialog.js";
 import * as highlights from "./highlights.js";
 import * as nav from "./nav.js";
-
+import {showHighlights} from "./highlights.js";
+showHighlights();
 new MiniLazyload({
     rootMargin: "500px",
     placeholder: "https://imgplaceholder.com/420x320/ff7f7f/333333/fa-image"
