@@ -15,6 +15,13 @@ body {
   align-items: center;
   width: 100%;
   min-height: 100vh;
+  opacity: 70%;
+  background-image: url("../images/ALBUM FINAL - WHITE.png");
+  background-size: contain;
+}
+
+body * {
+  opacity: 80%;
 }
 
 header, article {
@@ -42,15 +49,19 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 15px 30px 10px 10px;
+  padding: 4px 30px 10px 10px;
   border-bottom: #3d3d3d 2px solid;
 }
 nav a, nav h1 {
   font-variant: all-petite-caps;
   font-weight: lighter;
   text-decoration: none;
-  padding: 0 15px;
+  padding: 0 8px;
+  padding-top: 6px;
   color: #3d3d3d;
+}
+nav a {
+  padding-right: 34px;
 }
 nav .fa-bars {
   display: none;
@@ -63,10 +74,12 @@ nav .fa-bars {
 }
 
 .profile-picture-mockup {
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   object-fit: cover;
   border-radius: 100%;
+  margin-right: 24px;
+  margin-top: 25px;
 }
 
 .img {
@@ -98,11 +111,14 @@ nav .fa-bars {
 .profile > div:last-of-type > div:nth-of-type(1) h1 {
   font-weight: lighter;
   margin-left: 0;
-  font-size: 25px;
+  font-size: 19px;
+}
+.profile > div:last-of-type > div:nth-of-type(1) .fas {
+  font-size: 11px;
 }
 .profile > div:last-of-type > div:nth-of-type(2) * {
   margin: 10px 0px;
-  font-size: 13px;
+  font-size: 11px;
 }
 .profile > div:last-of-type > div:nth-of-type(2) h3 {
   font-weight: normal;
@@ -116,7 +132,8 @@ nav .fa-bars {
 }
 .profile .toggleDiv {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  font-size: 8px;
 }
 .profile .toggleDiv .fas {
   margin-right: 5px;
@@ -139,17 +156,17 @@ nav .fa-bars {
   display: none;
   text-align: center;
   margin: 15px;
-  padding: 10px;
-  height: 165px;
+  padding: 2px;
+  height: 100px;
   max-width: 95px;
 }
 .highlights > a h2 {
   margin-top: 10px;
-  font-size: 13px;
+  font-size: 11px;
 }
 .highlights .img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin: auto;
 }
 .highlights h2 {
@@ -182,6 +199,7 @@ article .image {
   background-position: center;
   background-size: cover;
   object-fit: cover;
+  transition: 0.75s ease-in-out;
 }
 article .album {
   display: flex;
