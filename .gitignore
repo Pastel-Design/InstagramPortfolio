@@ -3,3 +3,4 @@ vendor
 node_modules
 design
 www/images
+app/config/DbConfig.php
