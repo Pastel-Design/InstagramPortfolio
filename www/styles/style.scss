@@ -19,16 +19,12 @@ body {
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  opacity: 70%;
-  background-image: url("../images/ALBUM FINAL - WHITE.png");
-  background-size: contain;
-}
-body *{
-  opacity: 80%;
+  background-size: cover;
 }
 
 header, article {
-  max-width: 1024px;
+  max-width: 938px;
+  padding: 0;
   width: 50%;
 }
 
@@ -67,6 +63,9 @@ nav {
   padding: 4px 30px 10px 10px;
   border-bottom: darken($lightModeTextColor, 15) 2px solid;
 
+  .h1{
+    font-size: 24px;
+  }
   a, h1 {
     font-variant: all-petite-caps;
     font-weight: lighter;
@@ -109,6 +108,7 @@ nav {
 .profile {
   display: flex;
   padding: 10px;
+  min-height: 213px;
 
   > div:first-of-type {
     flex: 1;
@@ -213,18 +213,19 @@ nav {
 
 //article
 .images {
+  max-width: 935px;
   margin-top: 25px;
-  padding-top: 0px;
+  padding: 0px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
 }
 
 article {
   border-top: 2px solid $lightGrayText;
-  margin-top: 25px;
+  margin-top: 10px;
   padding-top: 0px;
   display: flex;
   flex-wrap: wrap;
@@ -232,7 +233,7 @@ article {
   align-items: center;
 
 
-  $imageSizes: 250px ;
+  $imageSizes: 293px ;
 
   .image {
     background-color: #7A7772;
@@ -379,7 +380,8 @@ h4 {
 @media screen and (max-width: 1552px) {
 
   article {
-    $imageSizes: 205px;
+    width: 935px;
+    $imageSizes: 293px;
 
     .image, .imageWrapper {
       width: $imageSizes;

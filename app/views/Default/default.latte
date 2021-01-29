@@ -1,4 +1,24 @@
 {extends "../@layout.latte"}
 {block content}
-
+    {var_dump($landingImage)}
+    <style>
+        body{
+            background-image: url('www/images/fullview/{$landingImage["filename"]}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+            overflow: hidden;
+        }
+        nav, nav *{
+            color: whitesmoke !important;
+            background-color: rgba(0,0,0,0) !important;
+            border: none;
+        }
+        header{
+            opacity: 0;
+        }
+        article{
+            opacity: 0;
+        }
+    </style>
 {/block}

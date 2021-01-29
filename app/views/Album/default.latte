@@ -1,10 +1,9 @@
 {extends "../@layout.latte"}
 {block content}
-    {var $i = 0}
-    {foreach $albums as $album}
+    {foreach $albums as $i => $album}
         <a href="/album/{$album["dash_title"]}" class="imageWrapper">
-            <div class="image album lazyload" id="image_{$i}" data-bg='images/thumbnail/{$album["cover_photo"]}'><p>{$album["title"]}</p></div>
+            <div class="image album lazyload" id="image_{$i}" data-bg='images/thumbnail/{$album["cover_photo"]}'>
+                <p>{$album["title"]|truncate: 15}</p></div>
         </a>
-        {php $i++}
     {/foreach}
 {/block}

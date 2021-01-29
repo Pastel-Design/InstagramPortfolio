@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function process(array $params, array $gets = null)
     {
+        $this->data["landingImage"] = $this->albumManager->getLandingImage();
         $this->head['page_title'] =$this->head['page_title'] . " | Home";
         $this->setView('default');
     }
