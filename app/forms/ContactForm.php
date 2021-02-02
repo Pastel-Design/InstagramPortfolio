@@ -4,6 +4,7 @@
 namespace app\forms;
 
 
+use app\models\MailManager;
 use Exception;
 use Nette\Forms\Form;
 use Nette\Forms\Controls\Checkbox as Checkbox;
@@ -32,6 +33,7 @@ class ContactForm extends FormFactory
 
         if ($this->form->isSuccess()) {
             $values = $this->form->getValues("array");
+            MailManager::sendMail($values["message"],$values["email"],$values["name"]);
             try {
                 $onSuccess($values);
             } catch (Exception $exception) {
