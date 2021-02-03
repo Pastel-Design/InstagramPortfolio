@@ -19,13 +19,21 @@ body {
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  background-size: cover;
+  background-size: 100%;
+ // background-image: url("../images/ig.png");
+  background-position: top;
+  opacity: 80%;
+
+  *{
+    opacity: 80%;
+  }
 }
+
 
 header, article {
   max-width: 938px;
   padding: 0;
-  width: 50%;
+  width: 90%;
 }
 
 
@@ -68,7 +76,6 @@ nav {
   }
   a, h1 {
     font-variant: all-petite-caps;
-    font-weight: lighter;
     text-decoration: none;
     padding: 0 8px;
     padding-top: 6px;
@@ -91,8 +98,8 @@ nav {
 }
 
 .profile-picture-mockup {
-  height: 120px;
-  width: 120px;
+  height: 150px;
+  width: 150px;
   object-fit: cover;
   border-radius: 100%;
   margin-right: 24px;
@@ -163,7 +170,9 @@ nav {
   .toggleDiv {
     display: flex;
     align-items: center;
-    font-size: 8px;
+    p{
+      font-size: $smallFont;
+    }
 
     .fas {
       margin-right: 5px;
@@ -201,8 +210,8 @@ nav {
   }
 
   .img {
-    width: 60px;
-    height: 60px;
+    width: 74px;
+    height: 74px;
     margin: auto;
   }
 
@@ -215,18 +224,19 @@ nav {
 .images {
   max-width: 935px;
   margin-top: 25px;
-  padding: 0px;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
   width: 100%;
+  justify-content: space-between;
+  align-content: space-around;
+  justify-items: flex-start;
 }
 
 article {
   border-top: 2px solid $lightGrayText;
-  margin-top: 10px;
-  padding-top: 0px;
+  margin-top: 20px;
+  padding-top: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -265,10 +275,10 @@ article {
   .imageWrapper {
     display: inline-block;
     overflow: hidden;
-    margin: 5px;
     width: $imageSizes;
     height: $imageSizes;
     text-decoration: none;
+    margin-bottom: 28px;
   }
 
   .image:hover {
@@ -330,7 +340,7 @@ dialog {
 //contactForm
 h4 {
   border-top: 2px solid $lightGrayText;
-  margin-top: 0px;
+  margin-top: 0;
   padding: 8px 10px;
   font-variant: all-small-caps;
   top: -1px;
@@ -391,61 +401,15 @@ h4 {
 
 }
 
-@media screen and (max-width: 1310px) {
 
-  article {
-    $imageSizes: 205px;
-    width: 60%;
 
-    .image, .imageWrapper {
-      width: $imageSizes;
-      height: $imageSizes;
-    }
-  }
-
-}
-
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: 996px) {
   header, article {
-    width: 70%;
-  }
-}
-
-@media screen and (max-width: 1145px) {
-  header, article {
-    width: 75%;
-  }
-  article {
-    $imageSizes: 225px;
-
-    .image, .imageWrapper {
-      width: $imageSizes;
-      height: $imageSizes;
-    }
-  }
-
-  .photoInfo {
-    img {
-      width: 100%;
-      height: auto;
-    }
-
-  }
-}
-
-@media screen and (max-width: 995px) {
-  header, article {
-    width: 80vw;
+    width: 95%;
     height: auto;
   }
-}
-
-@media screen and (max-width: 880px) {
-  header, article {
-    width: 90%;
-  }
   article {
-    $imageSizes: 200px;
+    $imageSizes: 280px;
 
     .image, .imageWrapper {
       width: $imageSizes;
@@ -454,12 +418,30 @@ h4 {
   }
 }
 
-@media screen and (max-width: 724px) {
+@media screen and (max-width:885px) {
+  header, article {
+    width: 95%;
+    height: auto;
+  }
   article {
-    $imageSizes: 185px;
+    $imageSizes: 270px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+    .imageWrapper{
+      margin: 2px;
+    }
+  }
+}
+
+@media screen and (max-width: 865px) {
+  article {
+    $imageSizes: 240px;
 
     .imageWrapper {
-      margin: 1px;
+      margin-bottom: 20px;
     }
 
     .image, .imageWrapper {
@@ -469,7 +451,7 @@ h4 {
   }
 }
 
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 771px) {
   nav {
     div {
       display: none;
@@ -501,7 +483,7 @@ h4 {
     flex-direction: column;
   }
   article {
-    $imageSizes: 155px;
+    $imageSizes: 180px;
 
     .image, .imageWrapper {
       width: $imageSizes;
@@ -510,7 +492,28 @@ h4 {
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 581px) {
+  article {
+    $imageSizes: 160px;
+    .image, .imageWrapper {
+      margin: 1px;
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+  }
+}
+
+@media screen and (max-width: 512px) {
+  article {
+    $imageSizes: 139px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+  }
+}
+@media screen and (max-width: 445px) {
   article {
     $imageSizes: 125px;
 
@@ -520,10 +523,9 @@ h4 {
     }
   }
 }
-
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 401px) {
   article {
-    $imageSizes: 105px;
+    $imageSizes: 120px;
 
     .image, .imageWrapper {
       width: $imageSizes;
