@@ -17,12 +17,7 @@ body {
   min-height: 100vh;
   background-size: 100%;
   background-position: top;
-  opacity: 80%;
 }
-body * {
-  opacity: 80%;
-}
-
 header, article {
   max-width: 938px;
   padding: 0;
