@@ -12,8 +12,9 @@ require("../vendor/autoload.php");
  */
 function autoloadFunction($class)
 {
-    $classname = "../" . preg_replace("/[\\ ]+/", "/", $class) . ".php";
+    $classname="./../" . str_replace("\\","/",$class) . ".php";
     if (is_readable($classname)) {
+        /** @noinspection PhpIncludeInspection */
         require($classname);
     }
 }
@@ -21,11 +22,6 @@ function autoloadFunction($class)
 spl_autoload_register("autoloadFunction");
 
 session_start();
-try {
-    DbManager::connect(DbConfig::$host, DbConfig::$username, DbConfig::$pass, DbConfig::$database);
-} catch (PDOException $exception) {
-   // Router::reroute("error/500");
-    var_dump($exception);
-}
+
 $router = new Router();
 $router->process(array($_SERVER['REQUEST_URI']));

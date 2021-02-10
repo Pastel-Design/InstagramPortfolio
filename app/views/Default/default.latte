@@ -1,9 +1,8 @@
 {extends "../@layout.latte"}
 {block content}
-    {var_dump($landingImage)}
     <style>
         body{
-            background-image: url('www/images/fullview/{$landingImage["filename"]}');
+            background-image: url('images/fullview/{$landingImage["filename"]}');
             background-size: cover;
             background-position: center;
             background-attachment: scroll;
