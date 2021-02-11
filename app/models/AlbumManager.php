@@ -113,8 +113,12 @@ class AlbumManager
         return DbManager::requestSingle("SELECT * FROM image WHERE id = ?", [$imageId]);
     }
 
-    public function getLandingImage()
+    public function getLandingImageDesktop()
     {
-        return DbManager::requestSingle("SELECT filename FROM landing_page_image where true");
+        return DbManager::requestSingle("SELECT desktop FROM landing_page_image where true");
+    }
+    public function getLandingImageMobile()
+    {
+        return DbManager::requestSingle("SELECT mobile FROM landing_page_image where true");
     }
 }

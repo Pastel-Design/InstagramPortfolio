@@ -24,7 +24,8 @@ class DefaultController extends Controller
      */
     public function process(array $params, array $gets = null)
     {
-        $this->data["landingImage"] = $this->albumManager->getLandingImage();
+        $this->data["landingImageDesktop"] = $this->albumManager->getLandingImageDesktop();
+        $this->data["landingImageMobile"] = $this->albumManager->getLandingImageMobile();
         $this->setView('default');
     }
 }

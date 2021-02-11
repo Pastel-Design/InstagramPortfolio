@@ -1,12 +1,17 @@
-{extends "../@layout.latte"}
+{extends "../@layout_plain.latte"}
 {block content}
     <style>
         body{
-            background-image: url('images/fullview/{$landingImage["filename"]}');
+            background-image: url('images/fullview/{$landingImageDesktop["desktop"]}');
             background-size: cover;
             background-position: center;
             background-attachment: scroll;
             overflow: hidden;
+        }
+        @media screen and (max-width: 760px) {
+            body{
+                background-image: url('images/fullview/{$landingImageMobile["mobile"]}');
+            }
         }
         nav, nav *{
             color: whitesmoke !important;
