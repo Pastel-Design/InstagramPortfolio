@@ -41,7 +41,7 @@ class AlbumManager
      */
     public function getAlbums(): array
     {
-        $albums = DbManager::requestMultiple("SELECT id,title,dash_title,cover_photo,no_photos,visible FROM album ORDER BY `order`");
+        $albums = DbManager::requestMultiple("SELECT id,title,dash_title,cover_photo,no_photos,visible FROM album ORDER BY `order` DESC");
         $newAlbums = array();
         foreach ($albums as $album) {
             if ($album["cover_photo"] == Null) {
@@ -60,7 +60,7 @@ class AlbumManager
     public function getAlbumsHighlits(): array
     {
         return DbManager::requestMultiple('
-        SELECT album.id,album.dash_title,album.title,i.filename as cover_photo FROM album JOIN image i on album.cover_photo = i.id ORDER BY album.`order`
+        SELECT album.id,album.dash_title,album.title,i.filename as cover_photo FROM album JOIN image i on album.cover_photo = i.id ORDER BY album.`order` DESC
         ');
     }
 

@@ -33,9 +33,9 @@ header, article {
 }
 
 .darkMode *, .darkMode {
-  color: #636363;
+  color: #000000;
   background-color: #ffffff;
-  border-color: #636363;
+  border-color: #000000;
 }
 
 .fa-toggle-off, .fa-toggle-on {
