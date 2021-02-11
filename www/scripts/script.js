@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         imagesRightButton.addEventListener("click", changeImageInDialog);
         imagesLeftButton.addEventListener("click", changeImageInDialog.bind(false, false));
         displayedImage.addEventListener("click", changeImageInDialog);
+        document.addEventListener("keydown", changeImageOnKey)
     }
 
     function showImageDialog(photoId) {
@@ -105,6 +106,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function closeImageDialog() {
         photoDialog.close();
         photoDialog.style.display = "";
+    }
+
+    function changeImageOnKey(e){
+        if(e.keyCode === 37){
+            changeImageInDialog();
+        }else if(e.keyCode === 39){
+            changeImageInDialog(true);
+        }else if(e.keyCode === 27){
+            closeImageDialog();
+        }
     }
 
     function changeImageInDialog(toTheRight = true) {
