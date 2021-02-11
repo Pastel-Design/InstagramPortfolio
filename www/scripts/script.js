@@ -93,14 +93,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         photoDialog.close();
     }
     function showImageDialog(photoId) {
-        if (typeof photoDialog.showModal === "function") {
+        //if (typeof photoDialog.showModal === "function") {
             displayedImage.src = document.getElementById(photoId).src.replace(/thumbnail/, "fullview");
             displayedImage.id = photoId;
-            photoDialog.showModal()
+            //photoDialog.showModal()
             photoDialog.style.display = "flex";
-        } else {
+        /*} else {
             alert("The <dialog> API is not supported by this browser");
-        }
+        }*/
     }
 
     function closeImageDialog() {
