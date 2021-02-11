@@ -159,6 +159,7 @@ nav .fa-bars {
   justify-content: flex-end;
   padding-right: 20px;
   align-items: center;
+  justify-content: center;
 }
 .highlights .fas {
   cursor: pointer;
@@ -192,9 +193,7 @@ nav .fa-bars {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between;
-  align-content: space-around;
-  justify-items: flex-start;
+  justify-content: center;
 }
 
 article {
@@ -248,7 +247,7 @@ article .imageWrapper {
   width: 293px;
   height: 293px;
   text-decoration: none;
-  margin-bottom: 28px;
+  margin: 5px;
 }
 article .image:hover {
   cursor: pointer;
@@ -370,8 +369,8 @@ h4 {
   }
 
   article .image, article .imageWrapper {
-    width: 280px;
-    height: 280px;
+    width: 250px;
+    height: 250px;
   }
 }
 @media screen and (max-width: 885px) {
@@ -389,9 +388,6 @@ h4 {
   }
 }
 @media screen and (max-width: 865px) {
-  article .imageWrapper {
-    margin-bottom: 20px;
-  }
   article .image, article .imageWrapper {
     width: 240px;
     height: 240px;
@@ -453,8 +449,8 @@ h4 {
 }
 @media screen and (max-width: 401px) {
   article .image, article .imageWrapper {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
   }
 }
 
