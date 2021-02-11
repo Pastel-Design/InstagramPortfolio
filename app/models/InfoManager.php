@@ -75,7 +75,7 @@ class InfoManager
     /**
      * @return string
      */
-    public function getContactEmail()
+    public static function getContactEmail()
     {
         return DbManager::requestUnit("SELECT email FROM web_info");
     }

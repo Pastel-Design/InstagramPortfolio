@@ -37,7 +37,7 @@ class ContactForm extends FormFactory
             try {
                 $onSuccess($values);
             } catch (Exception $exception) {
-                $this->form->addError($exception->getMessage());
+                //$this->form->addError($exception->getMessage());
             }
         }
 
