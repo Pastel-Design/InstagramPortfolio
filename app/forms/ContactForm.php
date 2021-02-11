@@ -37,7 +37,7 @@ class ContactForm extends FormFactory
             try {
                 $onSuccess($values);
             } catch (Exception $exception) {
-                $this->form->addError($exception->getMessage());
+                echo "<p class='messageSent withError'>Message wasn't send. Please try again later.</p>";
             }
         }
 

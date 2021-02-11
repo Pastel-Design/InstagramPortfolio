@@ -32,6 +32,19 @@ header, article {
   width: 90%;
 }
 
+.messageSent {
+  position: absolute;
+  z-index: 50;
+  padding: 15px;
+  margin: auto;
+  background-color: #407316;
+  bottom: 0;
+}
+
+.withError {
+  background-color: #880000;
+}
+
 .darkMode *, .darkMode {
   color: #000000;
   background-color: #ffffff;

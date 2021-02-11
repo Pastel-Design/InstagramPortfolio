@@ -3,9 +3,6 @@
 
 namespace app\models;
 
-use Swift_Mailer as Mailer;
-use Swift_SmtpTransport as Transport;
-use Swift_Message as Message;
 
 class MailManager
 {
@@ -14,15 +11,25 @@ class MailManager
     public static function sendMail(string $text, string $email, string $name)
     {
         // TODO: upravit funkci pro skutečnou funkčnost
-        $to = "wertykal123@gmail.com";
-        $subject = "Message from your website. ";
-        $transport = (new Transport('localhost',1025));
-        $mailer = new Mailer($transport);
-        $message = (new Message($subject))
-            ->setFrom([$email => $name])
-            ->setTo([$to => "Gareth Jorden"])
-            ->setBody($text);
-        $mailer->send($message);
-    }
+        try{
+            $to = InfoManager::getContactEmail();
+            $subject = "Message from your website. ";
 
+            $transport = (new \Swift_SmtpTransport('mail.garethjorden.com',587))
+                ->setUsername("mailer@garethjorden.com")
+                ->setPassword("xPassword159753");
+
+            $mailer = new  \Swift_Mailer($transport);
+
+            $message = (new \Swift_Message($subject))
+                ->setFrom([$email => $name])
+                ->setTo([$to => "Gareth Jorden"])
+                ->setBody($text);
+
+            $mailer->send($message);
+
+        }catch (\Swift_SwiftException $exception){
+                // :)
+        }
+    }
 }
