@@ -264,7 +264,6 @@ article .imageWrapper {
   width: 293px;
   height: 293px;
   text-decoration: none;
-  margin: 5px;
 }
 article .imageWrapper:hover {
   background-color: black;
@@ -406,7 +405,7 @@ h4 {
     height: 30vw;
   }
   article .imageWrapper {
-    margin: 1vw;
+    margin-bottom: 4vw;
   }
 }
 /*@media screen and (max-width: 865px) {
@@ -448,11 +447,6 @@ h4 {
 
   .profile {
     flex-direction: column;
-  }
-
-  article .image, article .imageWrapper {
-    width: 190px;
-    height: 190px;
   }
 }
 /*

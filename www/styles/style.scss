@@ -324,7 +324,6 @@ article {
     width: $imageSizes;
     height: $imageSizes;
     text-decoration: none;
-    margin: 5px;
   }
 
   .imageWrapper:hover {
@@ -498,7 +497,7 @@ h4 {
     }
 
     .imageWrapper {
-      margin: 1vw;
+      margin-bottom: 4vw;
     }
   }
 }
@@ -546,14 +545,6 @@ h4 {
   }
   .profile {
     flex-direction: column;
-  }
-  article {
-    $imageSizes: 190px;
-
-    .image, .imageWrapper {
-      width: $imageSizes;
-      height: $imageSizes;
-    }
   }
 }
 /*
