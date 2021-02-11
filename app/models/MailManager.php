@@ -14,7 +14,7 @@ class MailManager
     public static function sendMail(string $text, string $email, string $name)
     {
         // TODO: upravit funkci pro skutečnou funkčnost
-        $to = "garethjorensEMAIL";
+        $to = "wertykal123@gmail.com";
         $subject = "Message from your website. ";
         $transport = (new Transport('localhost',1025));
         $mailer = new Mailer($transport);
