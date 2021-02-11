@@ -75,8 +75,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let displayedImage = document.querySelector("#photoDialog img");
     let imgDiv = document.querySelector(".photoInfo");
 
-    photoDialog.style.removeProperty("display");
-
     if (photoDialog) {
         for (let photo of photos) {
             photo.addEventListener("click", showImageDialog.bind(false, photo.id));
