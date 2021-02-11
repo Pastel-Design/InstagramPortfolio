@@ -282,7 +282,7 @@ article {
     align-items: flex-end;
     padding-bottom: 20px;
     filter: blur(15%);
-
+  }
     @media screen and (max-width: 770px) {
       text-align: center;
       font-size: 13px;
@@ -312,9 +312,12 @@ article {
     margin: 5px;
   }
 
-  .image:hover {
-    cursor: pointer;
-  }
+  .imageWrapper:hover{
+    background-color: black;
+    .image{
+      cursor: pointer;
+      opacity: 70%;
+    }
 }
 
 dialog {
@@ -464,9 +467,9 @@ h4 {
   }
 }
 
-@media screen and (max-width: 885px) {
+@media screen and (max-width: 880px) {
   header, article {
-    width: 95%;
+    width: 100%;
     height: auto;
   }
   article {
@@ -528,7 +531,18 @@ h4 {
     flex-direction: column;
   }
   article {
-    $imageSizes: 180px;
+    $imageSizes: 190px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+  }
+}
+
+@media screen and (max-width: 597px) {
+  article {
+    $imageSizes: 170px;
 
     .image, .imageWrapper {
       width: $imageSizes;
@@ -581,9 +595,9 @@ h4 {
     }
   }
 }
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 385px) {
   article {
-    $imageSizes: 200px;
+    $imageSizes: 300px;
 
     .image, .imageWrapper {
       width: $imageSizes;
