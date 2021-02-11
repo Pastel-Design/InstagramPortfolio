@@ -344,7 +344,6 @@ dialog {
   height: 100%;
   border: 0;
   background-color: rgba(0, 0, 0, 0.78) !important;
-  //display: flex; ! nesmí mít display jinak nebude fungovat, je pořteba nastavit v js
   display: none;
   justify-content: space-evenly;
   align-items: center;
@@ -489,7 +488,7 @@ h4 {
     height: auto;
   }
   article {
-    $imageSizes: 270px;
+    $imageSizes: 30vw;
 
     .image, .imageWrapper {
       width: $imageSizes;
@@ -497,12 +496,12 @@ h4 {
     }
 
     .imageWrapper {
-      margin: 2px;
+      margin: 1vw;
     }
   }
 }
 
-@media screen and (max-width: 865px) {
+/*@media screen and (max-width: 865px) {
   article {
     $imageSizes: 240px;
 
@@ -610,8 +609,7 @@ h4 {
       height: $imageSizes;
     }
   }
-}
-
+}*/
 @media screen and (max-width: 385px) {
   article {
     $imageSizes: 300px;

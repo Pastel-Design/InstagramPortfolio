@@ -398,85 +398,122 @@ h4 {
   }
 
   article .image, article .imageWrapper {
-    width: 270px;
-    height: 270px;
+    width: 30vw;
+    height: 30vw;
   }
   article .imageWrapper {
-    margin: 2px;
+    margin: 1vw;
   }
 }
-@media screen and (max-width: 865px) {
-  article .image, article .imageWrapper {
-    width: 240px;
-    height: 240px;
-  }
-}
-@media screen and (max-width: 771px) {
-  nav div {
-    display: none;
-  }
-  nav .fa-bars {
-    display: block;
-    cursor: pointer;
-  }
+/*@media screen and (max-width: 865px) {
+  article {
+    $imageSizes: 240px;
 
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+  }
+}
+
+@media screen and (max-width: 771px) {
+  nav {
+    div {
+      display: none;
+    }
+
+    .fa-bars {
+      display: block;
+      cursor: pointer;
+    }
+  }
   .navShown {
     flex-direction: column;
     align-items: center;
-  }
-  .navShown .fa-bars {
-    margin-top: 15px;
-    margin-right: 25px;
-  }
-  .navShown div {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-  }
-  .navShown h1 {
-    padding-bottom: 25px;
-  }
 
+    .fa-bars {
+      margin-top: 15px;
+      margin-right: 25px;
+    }
+
+    div {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+    }
+
+    h1 {
+      padding-bottom: 25px;
+    }
+  }
   .profile {
     flex-direction: column;
   }
+  article {
+    $imageSizes: 190px;
 
-  article .image, article .imageWrapper {
-    width: 190px;
-    height: 190px;
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
   }
 }
+
 @media screen and (max-width: 597px) {
-  article .image, article .imageWrapper {
-    width: 170px;
-    height: 170px;
+  article {
+    $imageSizes: 170px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
   }
 }
+
 @media screen and (max-width: 581px) {
-  article .image, article .imageWrapper {
-    margin: 1px;
-    width: 160px;
-    height: 160px;
+  article {
+    $imageSizes: 160px;
+
+    .image, .imageWrapper {
+      margin: 1px;
+      width: $imageSizes;
+      height: $imageSizes;
+    }
   }
 }
+
 @media screen and (max-width: 512px) {
-  article .image, article .imageWrapper {
-    width: 139px;
-    height: 139px;
+  article {
+    $imageSizes: 139px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
   }
 }
+
 @media screen and (max-width: 445px) {
-  article .image, article .imageWrapper {
-    width: 125px;
-    height: 125px;
+  article {
+    $imageSizes: 125px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
   }
 }
+
 @media screen and (max-width: 401px) {
-  article .image, article .imageWrapper {
-    width: 120px;
-    height: 120px;
+  article {
+    $imageSizes: 120px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
   }
-}
+}*/
 @media screen and (max-width: 385px) {
   article .image, article .imageWrapper {
     width: 300px;
