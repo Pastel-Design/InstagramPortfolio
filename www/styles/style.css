@@ -22,6 +22,10 @@ h1 {
   font-weight: lighter;
 }
 
+#darkmodeToggleButton {
+  font-size: 30px;
+}
+
 header {
   margin-top: 50px;
 }
@@ -303,7 +307,7 @@ dialog .fas-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 8px;
   width: 80px;
   height: 120px;
