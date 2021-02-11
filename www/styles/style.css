@@ -263,6 +263,7 @@ dialog {
   height: 100%;
   border: 0;
   background-color: rgba(0, 0, 0, 0.78) !important;
+  display: none;
   justify-content: space-evenly;
   align-items: center;
 }

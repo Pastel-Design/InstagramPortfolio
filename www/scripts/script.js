@@ -89,7 +89,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         displayedImage.addEventListener("click", changeImageInDialog);
         document.addEventListener("keydown", changeImageOnKey)
     }
-
+    if (photoDialog) {
+        photoDialog.close();
+    }
     function showImageDialog(photoId) {
         if (typeof photoDialog.showModal === "function") {
             displayedImage.src = document.getElementById(photoId).src.replace(/thumbnail/, "fullview");
@@ -106,12 +108,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         photoDialog.style.display = "";
     }
 
-    function changeImageOnKey(e){
-        if(e.keyCode === 37){
+    function changeImageOnKey(e) {
+        if (e.keyCode === 37) {
             changeImageInDialog();
-        }else if(e.keyCode === 39){
+        } else if (e.keyCode === 39) {
             changeImageInDialog(true);
-        }else if(e.keyCode === 27){
+        } else if (e.keyCode === 27) {
             closeImageDialog();
         }
     }
@@ -161,11 +163,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function setImageTextDom(response, iserr = true) {
         if (iserr) {
-            document.querySelector("dialog .info h3").textContent = response.title;
-            document.querySelector("dialog .info p").textContent = response.description;
+            document.querySelector("#photoDialog .info h3").textContent = response.title;
+            document.querySelector("#photoDialog .info p").textContent = response.description;
         } else {
-            document.querySelector("dialog .info h3").textContent = "";
-            document.querySelector("dialog .info p").textContent = "";
+            document.querySelector("#photoDialog .info h3").textContent = "";
+            document.querySelector("#photoDialog .info p").textContent = "";
         }
     }
 
