@@ -4,7 +4,7 @@
     {foreach $albums as $i => $album}
         <a href="/album/{$album["dash_title"]}" class="imageWrapper">
             <div class="image album lazyload" id="image_{$i}" data-bg='images/thumbnail/{$album["cover_photo"]}'>
-                <p>{$album["title"]|truncate: 15}</p></div>
+                <p>{$album["title"]}</p></div>
         </a>
     {/foreach}
     </div>

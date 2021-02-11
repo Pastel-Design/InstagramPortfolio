@@ -207,7 +207,7 @@ article {
   align-items: center;
 }
 article .image {
-  background-color: #7A7772;
+  background-color: #bebebe;
   width: 293px;
   height: 293px;
   background-position: center;
@@ -219,14 +219,28 @@ article .album {
   background-image: linear-gradient(black, black);
   background-blend-mode: multiply;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
   filter: blur(15%);
+}
+@media screen and (max-width: 770px) {
+  article .album {
+    text-align: center;
+    font-size: 13px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+article .album p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 article .album * {
   padding: 0;
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0);
-  color: #636363;
+  color: #c7c7c6;
 }
 article .imageWrapper {
   display: inline-block;

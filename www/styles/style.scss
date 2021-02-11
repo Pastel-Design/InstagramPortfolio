@@ -267,7 +267,7 @@ article {
   $imageSizes: 293px ;
 
   .image {
-    background-color: #7A7772;
+    background-color: #bebebe;
     width: $imageSizes;
     height: $imageSizes;
     background-position: center;
@@ -280,14 +280,25 @@ article {
     background-image: linear-gradient(black, black);
     background-blend-mode: multiply;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
     filter: blur(15%);
-
+    @media screen and (max-width: 770px) {
+      text-align: center;
+      font-size: 13px;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
     * {
       padding: 0;
       text-decoration: none;
       background-color: rgba(0, 0, 0, 0);
-      color: $darkModeTextColor;
+      color: #c7c7c6;
     }
   }
 
