@@ -573,6 +573,16 @@ h4 {
 
 @media screen and (max-width: 401px) {
   article {
+    $imageSizes: 120px;
+
+    .image, .imageWrapper {
+      width: $imageSizes;
+      height: $imageSizes;
+    }
+  }
+}
+@media screen and (max-width: 380px) {
+  article {
     $imageSizes: 200px;
 
     .image, .imageWrapper {
