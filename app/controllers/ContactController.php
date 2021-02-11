@@ -27,7 +27,9 @@ class ContactController extends Controller
     function process(array $params, array $gets = null)
     {
         $this->head['page_title'] = $this->head['page_title'] . " | Contact";
-        $this->data["form"] = $this->form->create(function (){echo "hello world! :)";});
+        $this->data["form"] = $this->form->create(function (){
+            echo "<p class='messageSent'>Message was sent successfully</p>";
+        });
         $this->setView('default');
     }
 }
