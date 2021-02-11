@@ -345,6 +345,7 @@ dialog {
   border: 0;
   background-color: rgba(0, 0, 0, 0.78) !important;
   //display: flex; ! nesmí mít display jinak nebude fungovat, je pořteba nastavit v js
+  display: none;
   justify-content: space-evenly;
   align-items: center;
 
