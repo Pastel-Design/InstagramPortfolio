@@ -32,9 +32,6 @@ body {
 h1 {
   font-weight: lighter;
 }
-#darkmodeToggleButton{
-  font-size: 30px;
-}
 header {
   margin-top: 50px;
 }
@@ -263,7 +260,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 article {
@@ -467,22 +464,30 @@ h4 {
 
 }
 
-
+@media screen and (min-width: 996px) {
+  .imageWrapper{
+    margin-bottom: 25px;
+  }
+}
 @media screen and (max-width: 996px) {
+  h1{
+    font-size: 18px !important;
+  }
   header, article {
-    width: 95%;
+    width: 100%;
     height: auto;
   }
   article {
     $imageSizes: 250px;
 
     .image, .imageWrapper {
-      width: $imageSizes;
-      height: $imageSizes;
+      width: 32vw;
+      height: 32vw;
+      margin-bottom: 1vw;
     }
   }
 }
-
+/*
 @media screen and (max-width: 880px) {
   header, article {
     width: 100%;
@@ -492,16 +497,16 @@ h4 {
     $imageSizes: 30vw;
 
     .image, .imageWrapper {
-      width: $imageSizes;
-      height: $imageSizes;
+      //width: $imageSizes;
+      //height: $imageSizes;
     }
 
     .imageWrapper {
-      margin-bottom: 4vw;
+      //margin-bottom: 4vw;
     }
   }
 }
-
+*/
 /*@media screen and (max-width: 865px) {
   article {
     $imageSizes: 240px;
@@ -604,6 +609,9 @@ h4 {
   }
 }*/
 @media screen and (max-width: 385px) {
+  .images{
+    justify-content: center;
+  }
   article {
     $imageSizes: 300px;
 
