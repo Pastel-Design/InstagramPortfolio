@@ -12,6 +12,9 @@
   scroll-behavior: smooth;
   text-decoration: none;
 }
+#imagesLeftButton,#imagesRightButton{
+  opacity: 50%;
+}
 
 body {
   display: flex;

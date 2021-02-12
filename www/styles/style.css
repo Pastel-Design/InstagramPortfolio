@@ -9,6 +9,10 @@
   text-decoration: none;
 }
 
+#imagesLeftButton, #imagesRightButton {
+  opacity: 50%;
+}
+
 body {
   display: flex;
   flex-direction: column;

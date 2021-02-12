@@ -178,8 +178,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let bodyTag = document.querySelector("body");
     let darkmodeToggleButton = document.getElementById("darkmodeToggleButton");
     let isInDark = false;
-
+    //alert("karel");
     let currentTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
+    //alert(currentTheme);
     if (currentTheme) {
         if (currentTheme === "dark") {
             setDarkmode();
