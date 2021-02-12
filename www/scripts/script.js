@@ -194,7 +194,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function setDarkmode() {
         //alert("funkce")
-        //alert(darkmodeToggleButton)
+        darkmodeToggleButton = document.getElementById("darkmodeToggleButton");
+        darkmodeToggleButton.addEventListener("click", setDarkmode);
+        bodyTag = document.querySelector(" body");
         //alert(bodyTag)
         //alert(localStorage)
         if (!isInDark) {
