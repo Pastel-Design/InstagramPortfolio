@@ -346,6 +346,15 @@ dialog {
   justify-content: space-evenly;
   align-items: center;
 
+  #closeDialogButton{
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    z-index: 300;
+  }
   .photoInfo {
     max-width: 80vw;
     max-height: 80vh;
