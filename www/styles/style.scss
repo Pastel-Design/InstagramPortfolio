@@ -55,7 +55,9 @@ header, article {
   background-color: black !important;
   bottom: 0;
 }
-
+.darkMode .messageSent {
+color: white;
+}
 .withError {
   background-color: #880000;
 }
@@ -229,7 +231,9 @@ nav {
 
 #highlightsRightButton {
 }
-
+.darkMode .highlights>a:hover h2{
+  color:darken($lightModeTextColor, 40);
+}
 .highlights {
   display: flex;
   justify-content: flex-end;
@@ -254,6 +258,9 @@ nav {
       font-size: $smallFont;
       font-weight: normal;
     }
+  }
+  > a:hover h2{
+    color:darken($lightModeTextColor, 35);
   }
 
   .img {
