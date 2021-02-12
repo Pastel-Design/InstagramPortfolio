@@ -23,7 +23,7 @@ class ContactForm extends FormFactory
         $this->form->addText("name", "Name")
             ->setRequired();
 
-        $this->form->addText("email", "E-mail")
+        $this->form->addEmail("email", "E-mail")
             ->setRequired();
 
         $this->form->addTextArea("message", "Message")
