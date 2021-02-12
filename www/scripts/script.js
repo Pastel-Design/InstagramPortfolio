@@ -193,16 +193,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function setDarkmode() {
+        //alert("funkce")
         if (!isInDark) {
-            darkmodeToggleButton.classList.replace("fa-toggle-off", "fa-toggle-on");
-            bodyTag.classList.add("darkMode");
-            isInDark = true;
-            localStorage.setItem("theme", "dark");
+            //alert("!!!")
+            alert(darkmodeToggleButton.classList.replace("fa-toggle-off", "fa-toggle-on"));
+            alert(bodyTag.classList.toggle("darkMode"));
+            isInDark = !isInDark;
+            alert(localStorage.setItem("theme", "dark"));
         } else {
-            darkmodeToggleButton.classList.replace("fa-toggle-on", "fa-toggle-off");
-            bodyTag.classList.remove("darkMode");
-            isInDark = false;
-            localStorage.setItem("theme", "light");
+            //alert("???")
+            alert(darkmodeToggleButton.classList.replace("fa-toggle-on", "fa-toggle-off"));
+            alert(bodyTag.classList.toggle("darkMode"));
+            isInDark = !isInDark;
+            alert(localStorage.setItem("theme", "light"));
         }
     }
 })
