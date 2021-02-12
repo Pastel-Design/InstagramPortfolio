@@ -283,13 +283,29 @@ dialog {
   align-items: center;
 }
 dialog #closeDialogButton {
-  cursor: pointer;
-  font-size: 25px;
-  color: white;
   position: absolute;
+  right: 40px;
   top: 70px;
-  right: 50px;
-  z-index: 300;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+dialog #closeDialogButton:hover {
+  opacity: 1;
+}
+dialog #closeDialogButton:before, dialog #closeDialogButton:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #fff;
+}
+dialog #closeDialogButton:before {
+  transform: rotate(45deg);
+}
+dialog #closeDialogButton:after {
+  transform: rotate(-45deg);
 }
 dialog .photoInfo {
   max-width: 80vw;

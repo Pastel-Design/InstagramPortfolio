@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let imagesLeftButton = document.getElementById("imagesLeftButton");
     let displayedImage = document.querySelector("#photoDialog img");
     let imgDiv = document.querySelector(".photoInfo");
+    let closeDialogButton = document.getElementById("closeDialogButton")
 
     if (photoDialog) {
         for (let photo of photos) {
@@ -88,6 +89,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         imagesLeftButton.addEventListener("click", changeImageInDialog.bind(false, false));
         displayedImage.addEventListener("click", changeImageInDialog);
         document.addEventListener("keydown", changeImageOnKey)
+        closeDialogButton.addEventListener("click", closeImageDialog);
     }
     if (photoDialog) {
         photoDialog.close();
@@ -104,8 +106,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function closeImageDialog() {
-        photoDialog.close();
-        photoDialog.style.display = "";
+        //photoDialog.close();
+        photoDialog.style.display = "none";
     }
 
     function changeImageOnKey(e) {
