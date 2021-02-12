@@ -89,7 +89,10 @@ nav a {
   padding-right: 34px;
 }
 nav div > a {
-  font-size: 16px;
+  font-size: 20px;
+}
+nav div > a:hover {
+  color: #a6a6a6;
 }
 nav .fa-bars {
   display: none;
