@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../../www/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../www/styles/style.css?v={time()}" type="text/css"/>
+    <script src="../../www/scripts/script.js?v={time()}"></script>
     <!-- minilazyload -->
     <script src="../node_modules/minilazyload/dist/minilazyload.min.js?v={time()}"></script>
     <!-- minilazyload -->
@@ -69,7 +70,46 @@
 <article>
     {include content}
 </article>
-<script src="../../www/scripts/script.js?v={time()}"></script>
 </body>
+<script>
+    /* DARKMODE */
 
+    let bodyTag = document.querySelector("body");
+    let darkmodeToggleButton = document.getElementById("darkmodeToggleButton");
+    let isInDark = false;
+    //alert("karel");
+    let currentTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
+    //alert(currentTheme);
+    if (currentTheme) {
+        if (currentTheme === "dark") {
+            setDarkmode();
+        }
+    }
+
+    window.onload = () => {
+        darkmodeToggleButton.addEventListener("click", setDarkmode);
+    }
+
+    function setDarkmode() {
+        //alert("funkce")
+        darkmodeToggleButton = document.getElementById("darkmodeToggleButton");
+        darkmodeToggleButton.addEventListener("click", setDarkmode);
+        bodyTag = document.querySelector(" body");
+        //alert(bodyTag)
+        //alert(localStorage)
+        if (!isInDark) {
+            //alert("!!!")
+            darkmodeToggleButton.classList.replace("fa-toggle-off", "fa-toggle-on");
+            bodyTag.classList.toggle("darkMode");
+            isInDark = !isInDark;
+            localStorage.setItem("theme", "dark");
+        } else {
+            //alert("???")
+            darkmodeToggleButton.classList.replace("fa-toggle-on", "fa-toggle-off");
+            bodyTag.classList.toggle("darkMode");
+            isInDark = !isInDark;
+            localStorage.setItem("theme", "light");
+        }
+    }
+</script>
 </html>

@@ -173,44 +173,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    /* DARKMODE */
 
-    let bodyTag = document.querySelector("body");
-    let darkmodeToggleButton = document.getElementById("darkmodeToggleButton");
-    let isInDark = false;
-    //alert("karel");
-    let currentTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
-    //alert(currentTheme);
-    if (currentTheme) {
-        if (currentTheme === "dark") {
-            setDarkmode();
-        }
-    }
+
     showHighlights();
-
-    window.onload = () => {
-        darkmodeToggleButton.addEventListener("click", setDarkmode);
-    }
-
-    function setDarkmode() {
-        //alert("funkce")
-        darkmodeToggleButton = document.getElementById("darkmodeToggleButton");
-        darkmodeToggleButton.addEventListener("click", setDarkmode);
-        bodyTag = document.querySelector(" body");
-        //alert(bodyTag)
-        //alert(localStorage)
-        if (!isInDark) {
-            //alert("!!!")
-            darkmodeToggleButton.classList.replace("fa-toggle-off", "fa-toggle-on");
-            bodyTag.classList.toggle("darkMode");
-            isInDark = !isInDark;
-            localStorage.setItem("theme", "dark");
-        } else {
-            //alert("???")
-            darkmodeToggleButton.classList.replace("fa-toggle-on", "fa-toggle-off");
-            bodyTag.classList.toggle("darkMode");
-            isInDark = !isInDark;
-            localStorage.setItem("theme", "light");
-        }
-    }
 })
