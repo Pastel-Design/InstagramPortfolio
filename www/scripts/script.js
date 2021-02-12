@@ -194,18 +194,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function setDarkmode() {
         //alert("funkce")
+        //alert(darkmodeToggleButton)
+        //alert(bodyTag)
+        //alert(localStorage)
         if (!isInDark) {
             //alert("!!!")
-            alert(darkmodeToggleButton.classList.replace("fa-toggle-off", "fa-toggle-on"));
-            alert(bodyTag.classList.toggle("darkMode"));
+            darkmodeToggleButton.classList.replace("fa-toggle-off", "fa-toggle-on");
+            bodyTag.classList.toggle("darkMode");
             isInDark = !isInDark;
-            alert(localStorage.setItem("theme", "dark"));
+            localStorage.setItem("theme", "dark");
         } else {
             //alert("???")
-            alert(darkmodeToggleButton.classList.replace("fa-toggle-on", "fa-toggle-off"));
-            alert(bodyTag.classList.toggle("darkMode"));
+            darkmodeToggleButton.classList.replace("fa-toggle-on", "fa-toggle-off");
+            bodyTag.classList.toggle("darkMode");
             isInDark = !isInDark;
-            alert(localStorage.setItem("theme", "light"));
+            localStorage.setItem("theme", "light");
         }
     }
 })

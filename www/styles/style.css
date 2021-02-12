@@ -85,6 +85,7 @@ nav a, nav h1 {
   color: #d9d9d9;
 }
 nav a {
+  font-size: 25px;
   padding-right: 34px;
 }
 nav .fa-bars {
