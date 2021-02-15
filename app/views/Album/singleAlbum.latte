@@ -1,6 +1,7 @@
 {extends "../@layout.latte"}
 {block content}
     <h1>{$info["title"]}</h1>
+    <p class="albumDescription">{$info["description"]}</p>
     <div class="images">
         {var $i = 0}
     {foreach $images as $image}
