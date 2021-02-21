@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function changeImageOnKey(e) {
         if (e.keyCode === 37) {
-            changeImageInDialog();
+            changeImageInDialog(false);
         } else if (e.keyCode === 39) {
             changeImageInDialog(true);
         } else if (e.keyCode === 27) {
